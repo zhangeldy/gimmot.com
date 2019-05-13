@@ -42,18 +42,28 @@ const unauthorizedResponse = async error => {
 Api.interceptors.request.use(configureAuth, e => Promise.reject(e));
 Api.interceptors.response.use(r => r, unauthorizedResponse);
 
-
 export const LoginApi = {
   login: (login, password) =>
     apiImitation(1000, {
       username: "Zhayik",
       token: "dfgdfgdfg"
     }),
-
-  checkAuth: (user) =>
+  checkAuth: user =>
     apiImitation(1000, {
       username: "Zhayik",
       token: "dfgdfgdfg"
     })
+};
 
+export const AuthApi = {
+  checkAuth: token =>
+    apiImitation(1000, {
+      user: {
+        name: "Zhangeldy",
+        surname: "Nurbekov",
+        middleName: "Zhunsaliev",
+        birthDate: "13.05.2019"
+      },
+      permissions: ['addUser']
+    })
 };

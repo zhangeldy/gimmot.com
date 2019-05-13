@@ -1,4 +1,5 @@
 import { createReducer } from "redux-starter-kit";
+import { AuthApi } from "../_helpers/service";
 
 /**
  * Constants
@@ -6,6 +7,7 @@ import { createReducer } from "redux-starter-kit";
 
 export const authModule = "auth";
 export const USER = `${authModule}/USER`;
+export const PERMISSIONS = `${authModule}/PERMISSIONS`;
 
 /**
  * Reducer
@@ -13,13 +15,17 @@ export const USER = `${authModule}/USER`;
 
 const initialState = {
   loading: true,
-  user: null
+  user: null,
+  permissions: []
 };
 
 export default createReducer(initialState, {
   [USER]: (state, action) => ({
     user: action.user,
     loading: false
+  }),
+  [PERMISSIONS]: (state, action) => ({
+    permissions: action.permissions
   })
 });
 
@@ -27,7 +33,13 @@ export default createReducer(initialState, {
  * Actions
  */
 
-export const checkToken = () => {
-  let token = localStorage.getItem("token");
-  return { type: USER, user: { name: "Zhangeldy" } };
+export const checkToken = () => async dispatch => {
+  try {
+    let token = localStorage.getItem("token");
+    let response = await AuthApi.checkAuth(token);
+    dispatch({ type: USER, user: response.data.user });
+    dispatch({ type: PERMISSIONS, user: response.data.permissions });
+  } catch (e) {
+    console.error(e);
+  }
 };

@@ -1,7 +1,7 @@
 import React from "react";
 import { Route , Redirect} from "react-router-dom";
 import { connect } from "react-redux";
-import { loginModule } from "../LoginPage/LoginDucks";
+import { authModule } from "../Auth/AuthDucks";
 
 const ProtectedRoute = ({ component: Component, ...rest }) => (
   <Route
@@ -27,8 +27,8 @@ const ProtectedRoute = ({ component: Component, ...rest }) => (
 );
 
 const mapStateToProps = state => ({
-  user: state[loginModule].user,
-  loading: state[loginModule].loading
+  user: state[authModule].user,
+  loading: state[authModule].loading
 });
 
 export default connect(mapStateToProps)(ProtectedRoute);
