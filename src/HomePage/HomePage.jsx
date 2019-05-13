@@ -4,7 +4,7 @@ import withTranslation from "../_hoc/withTranslation";
 
 function HomePage({ t }) {
   return (
-    <div>{t('fffffffffff')}</div>
+    <div>HomePage</div>
   );
 }
 

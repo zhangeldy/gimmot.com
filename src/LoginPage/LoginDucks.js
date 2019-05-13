@@ -3,8 +3,6 @@ import { history } from "../_helpers/store";
 import { NotificationManager } from "react-notifications";
 import { LoginApi } from "../_helpers/service";
 
-
-
 /**
  * Constants
  */
@@ -14,12 +12,9 @@ export const LOGIN = `${loginModule}/LOGIN`;
 export const LOADING = `${loginModule}/LOADING`;
 export const PERMISSIONS = `${loginModule}/PERMISSIONS`;
 
-
-
 /**
  * Reducer
  */
-
 
 const initialState = {
   user: null,
@@ -39,19 +34,15 @@ export default createReducer(initialState, {
   })
 });
 
-
-
-
 /**
  * Actions
  */
-
 
 export const login = (login, password) => async dispatch => {
   try {
     let response = await LoginApi.login(login, password);
     dispatch({ type: LOGIN, user: response.data });
-    localStorage.setItem('user',response.data );
+    localStorage.setItem("user", response.data);
     history.push("/");
   } catch (e) {
     console.error(e);
@@ -59,10 +50,9 @@ export const login = (login, password) => async dispatch => {
   }
 };
 
-
 export const checkAuth = () => async dispatch => {
   try {
-    let response = await LoginApi.checkAuth(localStorage.getItem('user'));
+    let response = await LoginApi.checkAuth(localStorage.getItem("user"));
     dispatch({ type: LOGIN, user: response.data });
     // dispatch(login(userName, password))
   } catch (e) {
