@@ -1,8 +1,7 @@
 import React from "react";
-import { Route ,Redirect} from "react-router-dom";
+import { Route , Redirect} from "react-router-dom";
 import { connect } from "react-redux";
 import { loginModule } from "../LoginPage/LoginDucks";
-import SideBar from "../SideBar/SideBar";
 
 const ProtectedRoute = ({ component: Component, ...rest }) => (
   <Route
@@ -14,19 +13,15 @@ const ProtectedRoute = ({ component: Component, ...rest }) => (
       }
 
       // если не авторизован
-      //if (!rest.withoutAuth && rest.user === null) {
-      //  return <Redirect to="/login"/>;
-      //}
-//
-      //if (rest.user && rest.path === "/login") {
-      //  return <Redirect to="/"/>;
-      //}
-
-      if (rest.hideSideBar) {
-        return <Component {...routeProps} />;
-      } else {
-        return <SideBar><Component {...routeProps} /></SideBar>;
+      if (!rest.withoutAuth && rest.user === null) {
+       return <Redirect to="/login"/>;
       }
+
+      if (rest.user && rest.path === "/login") {
+       return <Redirect to="/"/>;
+      }
+
+      return <Component {...routeProps} />;
     }}
   />
 );

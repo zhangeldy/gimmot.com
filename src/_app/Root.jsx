@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { compose } from "redux";
 import { withRouter } from "react-router-dom";
 import { NotificationContainer } from "react-notifications";
-import withLocalization from "../_hoc/withLocalization";
+import withTranslation from "../_hoc/withTranslation";
 import routers from "../_helpers/routers";
 import ProtectedRoute from "../_ui/ProtectedRoute";
 import { Route, Switch } from "react-router-dom";
@@ -29,9 +29,9 @@ const Root = ({ checkAuth }) => {
 };
 
 export default compose(
-  connect(null, { checkAuth }),
   withRouter,
-  withLocalization
+  withTranslation,
+  connect(null, { checkAuth })
 )(Root);
 
 

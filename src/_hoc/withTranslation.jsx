@@ -1,15 +1,15 @@
 import React from "react";
 import { injectIntl } from "react-intl";
 
-const withLocalization = Component => {
-  class WithLocalization extends React.Component {
+const withTranslation = Component => {
+  class WithTranslation extends React.Component {
     render() {
       const { intl, ...otherProps } = this.props;
       return (
         <Component
           {...otherProps}
           lang={intl.locale}
-          text={param => {
+          t={param => {
             if (param instanceof Object) {
               return intl.formatHTMLMessage(param);
             } else {
@@ -21,7 +21,7 @@ const withLocalization = Component => {
     }
   }
 
-  return injectIntl(WithLocalization);
+  return injectIntl(WithTranslation);
 };
 
-export default withLocalization;
+export default withTranslation;

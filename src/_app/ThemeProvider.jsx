@@ -1,7 +1,8 @@
 import React from "react";
-import { createMuiTheme, MuiThemeProvider } from "@material-ui/core/styles";
+import { createMuiTheme } from "@material-ui/core/styles";
+import { ThemeProvider as MuiThemeProvider } from '@material-ui/styles';
 import "react-table/react-table.css";
-import "../_app/style.scss";
+import "./style.scss";
 import "../_app/basscss.min.css";
 import "react-notifications/lib/notifications.css";
 import Color from "../_helpers/Color";
@@ -20,7 +21,7 @@ const theme = createMuiTheme({
   }
 });
 
-class StyleProvider extends React.Component {
+class ThemeProvider extends React.Component {
   render() {
     return (
       <MuiThemeProvider theme={theme}>
@@ -30,4 +31,4 @@ class StyleProvider extends React.Component {
   }
 }
 
-export default StyleProvider;
+export default ThemeProvider;

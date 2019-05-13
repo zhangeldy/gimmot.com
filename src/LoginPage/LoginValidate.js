@@ -4,6 +4,6 @@ import getText from "../utils/getText";
 
 
 export const loginValidate = yup.object().shape({
-  login: yup.string().required(getText("Обязательное поле для заполнения")),
-  password: yup.string().required(getText("Обязательное поле для заполнения"))
+  login: yup.string().required(getText("fffffffffff")),
+  password: yup.string().required(getText("fffffffffff"))
 });

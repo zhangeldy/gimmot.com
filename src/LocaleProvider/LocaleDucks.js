@@ -10,11 +10,9 @@ import { EN_TRANSLATION } from "../_locale/en";
 export const localeModule = "locale";
 export const CHANGE = `${localeModule}/CHANGE`;
 
-
 /**
  * Reducer
  */
-
 
 const initialState = {
   lang: RU_TRANSLATION.lang,
@@ -28,12 +26,9 @@ export default createReducer(initialState, {
   })
 });
 
-
-
 /**
  * Actions
  */
-
 
 export const changeLocale = lang => {
   localStorage.setItem("lang", lang);

@@ -12,10 +12,9 @@ const withModal = Component => {
         <Component
           {...this.props}
           modal={{
-            isOpen:this.state.isOpen,
             data: this.state.data,
-            onOpen: data => this.setState({ data , isOpen: true}),
-            onClose: () => this.setState({ data: null, isOpen: false })
+            open: data => this.setState({ data , open: true}),
+            close: () => this.setState({ data: null, open: false })
           }}
         />
       );

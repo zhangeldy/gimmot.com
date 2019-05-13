@@ -1,8 +1,7 @@
-import React, { Fragment } from "react";
+import React from "react";
 import { Field } from "formik";
 import PropTypes from "prop-types";
 import { errorMsg } from "../../utils/errorMsg";
-
 
 export default class FieldBox extends React.Component {
   onChange = (value, object) => {
@@ -22,7 +21,7 @@ export default class FieldBox extends React.Component {
         name={name}
         render={object => {
           return (
-            <Fragment>
+            <>
               {children({
                 value: object.field.value,
                 error: errorMsg(name, object.form),
@@ -31,12 +30,10 @@ export default class FieldBox extends React.Component {
                   this.onChange(value, object);
                 },
                 onBlur: () => {
-                  setTimeout(() => {
-                    this.onBlur(object);
-                  }, 200)
+                  setTimeout(() => this.onBlur(object), 200);
                 }
               })}
-            </Fragment>
+            </>
           );
         }}
       />

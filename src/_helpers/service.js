@@ -1,4 +1,5 @@
 import axios from "axios";
+import { apiImitation } from "../utils/apiImitation";
 
 export const Api = axios.create({
   baseURL: "https://example.com/api/",
@@ -40,3 +41,19 @@ const unauthorizedResponse = async error => {
 
 Api.interceptors.request.use(configureAuth, e => Promise.reject(e));
 Api.interceptors.response.use(r => r, unauthorizedResponse);
+
+
+export const LoginApi = {
+  login: (login, password) =>
+    apiImitation(1000, {
+      username: "Zhayik",
+      token: "dfgdfgdfg"
+    }),
+
+  checkAuth: (user) =>
+    apiImitation(1000, {
+      username: "Zhayik",
+      token: "dfgdfgdfg"
+    })
+
+};
