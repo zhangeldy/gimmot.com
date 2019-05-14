@@ -16,7 +16,7 @@ const configureAuth = config => {
       ...config
     };
     const token = localStorage.getItem("accessToken");
-    if (token && !(config.url === "/login" && config.method === "post")) {
+    if (token) {
       newConfig.headers.Authorization = `Bearer ${token}`;
     }
     return newConfig;

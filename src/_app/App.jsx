@@ -1,7 +1,7 @@
 import React from "react";
 import { Provider } from "react-redux";
 import { store, history } from "../_helpers/store";
-import LocaleProvider from "../LocaleProvider/LocaleProvider";
+import LocaleProvider from "../components/LocaleProvider/LocaleProvider";
 import ThemeProvider from "./ThemeProvider";
 import Root from "./Root";
 import { Router } from 'react-router-dom';

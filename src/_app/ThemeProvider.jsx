@@ -2,8 +2,8 @@ import React from "react";
 import { createMuiTheme } from "@material-ui/core/styles";
 import { ThemeProvider as MuiThemeProvider } from '@material-ui/styles';
 import "react-table/react-table.css";
-import "./style.scss";
-import "../_app/basscss.min.css";
+import "../_css/style.scss";
+import "../_css/basscss.min.css";
 import "react-notifications/lib/notifications.css";
 import Color from "../_helpers/Color";
 
