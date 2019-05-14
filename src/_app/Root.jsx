@@ -8,6 +8,7 @@ import ProtectedRoute from "./ProtectedRoute";
 import { Route, Switch } from "react-router-dom";
 import { checkAuth, loginModule } from "../LoginPage/LoginDucks";
 import { connect } from "react-redux";
+import Page404 from "../components/Page404/Page404";
 
 const Root = ({ checkAuth, loading, user, permissions }) => {
   useEffect(() => {
@@ -27,7 +28,7 @@ const Root = ({ checkAuth, loading, user, permissions }) => {
               permissions={permissions}
             />
           ))}
-          <Route render={() => <div>Упс страница не найдена</div>} />
+          <Route render={() => <Page404/>} />
         </Switch>
       </div>
     </>

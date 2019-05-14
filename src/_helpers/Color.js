@@ -2,7 +2,7 @@
  * Часто применяемые цвета
  */
 export default {
-  primary: '#3990a3',
+  primary: '#7C4F95',
   primaryLight: '#45bfd3',
   desc: '#666666',
   bodyBackground: '#F0F2F5',

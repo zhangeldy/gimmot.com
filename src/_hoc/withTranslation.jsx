@@ -11,9 +11,9 @@ const withTranslation = Component => {
           lang={intl.locale}
           t={param => {
             if (param instanceof Object) {
-              return intl.formatHTMLMessage(param);
+              return intl.formatMessage(param);
             } else {
-              return intl.formatHTMLMessage({ id: param });
+              return intl.formatMessage({ id: param });
             }
           }}
         />

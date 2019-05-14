@@ -1,6 +1,5 @@
 import React from "react";
-import { createMuiTheme } from "@material-ui/core/styles";
-import { ThemeProvider as MuiThemeProvider } from '@material-ui/styles';
+import { createMuiTheme, MuiThemeProvider } from "@material-ui/core/styles";
 import "react-table/react-table.css";
 import "../_css/style.scss";
 import "../_css/basscss.min.css";
@@ -13,22 +12,11 @@ const theme = createMuiTheme({
   },
   typography: {
     useNextVariants: true,
-    fontFamily: "\"Segoe UI\", \"Chinese Quote\", Tahoma, SansSerif, sans-serif",
+    fontFamily: '"Segoe UI", "Chinese Quote", Tahoma, SansSerif, sans-serif',
     fontSize: 12
-  },
-  shape: {
-    borderRadius: 6
   }
 });
 
-class ThemeProvider extends React.Component {
-  render() {
-    return (
-      <MuiThemeProvider theme={theme}>
-        {this.props.children}
-      </MuiThemeProvider>
-    );
-  }
+export default function ThemeProvider({ children }) {
+  return <MuiThemeProvider theme={theme}>{children}</MuiThemeProvider>;
 }
-
-export default ThemeProvider;
