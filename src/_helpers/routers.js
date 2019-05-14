@@ -1,33 +1,23 @@
-import React from "react";
 import LoginPage from "../LoginPage/LoginPage";
 import HomePage from "../HomePage/HomePage";
+import { Permissions } from "./Permissions";
 
-/*
-{
-  path: "/menu",
-  text: 'Авторизация',
-  component: Test,
-  permissions: [Roles.ADMIN],
-  withoutAuth: true,
-  sideBarItem: false,
-  hideSideBar:false
-  exact: true
-}
-*/
 
 const routers = [
   {
     path: "/",
-    text: "Главная",
+    textCode: "Главная",
     component: HomePage,
-    exact: true
+    withoutAuth: true,
+    exact: true,
+    permission: Permissions.homePage.code
   },
   {
     path: "/login",
-    text: "Авторизация",
+    textCode: "Авторизация",
     component: LoginPage,
     withoutAuth: true,
-    hideSideBar: true,
+    permission: Permissions.loginPage.code,
     exact: true
   }
 ];

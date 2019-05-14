@@ -20,25 +20,25 @@ const initialState = {
 };
 
 export default createReducer(initialState, {
-  [USER]: (state, action) => ({
-    user: action.user,
-    loading: false
-  }),
-  [PERMISSIONS]: (state, action) => ({
-    permissions: action.permissions
-  })
+  [USER]: (state, action) => {
+    state.user = action.user;
+    state.loading = false;
+  },
+  [PERMISSIONS]: (state, action) => {
+    state.permissions = action.permissions;
+  }
 });
 
 /**
  * Actions
  */
 
-export const checkToken = () => async dispatch => {
+export const checkAuth = () => async dispatch => {
   try {
     let token = localStorage.getItem("token");
-    let response = await AuthApi.checkAuth(token);
-    dispatch({ type: USER, user: response.data.user });
-    dispatch({ type: PERMISSIONS, user: response.data.permissions });
+    let { data } = await AuthApi.checkAuth(token);
+    dispatch({ type: USER, user: data.user });
+    dispatch({ type: PERMISSIONS, permissions: data.permissions });
   } catch (e) {
     console.error(e);
   }
