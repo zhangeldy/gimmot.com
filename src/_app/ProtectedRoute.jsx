@@ -1,7 +1,5 @@
 import React from "react";
 import { Route, Redirect } from "react-router-dom";
-import { connect } from "react-redux";
-import { authModule } from "../Auth/AuthDucks";
 import Content from "./Content";
 
 const ProtectedRoute = ({ component: Component, ...rest }) => (
@@ -15,7 +13,7 @@ const ProtectedRoute = ({ component: Component, ...rest }) => (
       }
 
       if (rest.loading) {
-        return <div>loading...</div>;
+        return <div>паждите...</div>;
       }
 
       // перенаправляем если не авторизован
@@ -28,8 +26,8 @@ const ProtectedRoute = ({ component: Component, ...rest }) => (
         return <Redirect to="/" />;
       }
 
-      if (rest.permission && !rest.userPermissions.includes(rest.permission)) {
-        return <div>access denied</div>
+      if (rest.permission && !rest.permissions.includes(rest.permission)) {
+        return <div>доступ запрещен</div>;
       }
 
       return <Content {...props} routeProps={routeProps} />;
@@ -37,10 +35,4 @@ const ProtectedRoute = ({ component: Component, ...rest }) => (
   />
 );
 
-const mapStateToProps = state => ({
-  user: state[authModule].user,
-  userPermissions: state[authModule].permissions,
-  loading: state[authModule].loading
-});
-
-export default connect(mapStateToProps)(ProtectedRoute);
+export default ProtectedRoute;

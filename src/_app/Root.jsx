@@ -6,10 +6,10 @@ import withTranslation from "../_hoc/withTranslation";
 import routers from "../_helpers/routers";
 import ProtectedRoute from "./ProtectedRoute";
 import { Route, Switch } from "react-router-dom";
-import { checkAuth } from "../Auth/AuthDucks";
+import { checkAuth, loginModule } from "../LoginPage/LoginDucks";
 import { connect } from "react-redux";
 
-const Root = ({ checkAuth }) => {
+const Root = ({ checkAuth, loading, user, permissions }) => {
   useEffect(() => {
     checkAuth();
   }, []);
@@ -19,7 +19,13 @@ const Root = ({ checkAuth }) => {
       <div>
         <Switch>
           {routers.map(route => (
-            <ProtectedRoute key={route.path} {...route} />
+            <ProtectedRoute
+              {...route}
+              key={route.path}
+              loading={loading}
+              user={user}
+              permissions={permissions}
+            />
           ))}
           <Route render={() => <div>Упс страница не найдена</div>} />
         </Switch>
@@ -28,8 +34,17 @@ const Root = ({ checkAuth }) => {
   );
 };
 
+const mapStateToProps = state => ({
+  user: state[loginModule].user,
+  permissions: state[loginModule].permissions,
+  loading: state[loginModule].loading
+});
+
 export default compose(
   withRouter,
   withTranslation,
-  connect(null, { checkAuth })
+  connect(
+    mapStateToProps,
+    { checkAuth }
+  )
 )(Root);

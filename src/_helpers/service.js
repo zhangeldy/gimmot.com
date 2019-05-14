@@ -15,16 +15,12 @@ const configureAuth = config => {
       headers: {},
       ...config
     };
-
     const token = localStorage.getItem("accessToken");
-
     if (token && !(config.url === "/login" && config.method === "post")) {
       newConfig.headers.Authorization = `Bearer ${token}`;
     }
-
     return newConfig;
   }
-
   return config;
 };
 
@@ -46,17 +42,17 @@ Api.interceptors.response.use(r => r, unauthorizedResponse);
 export const LoginApi = {
   login: (login, password) =>
     apiImitation(1000, {
-      username: "Zhayik",
-      token: "dfgdfgdfg"
+      user: {
+        name: "Zhangeldy",
+        surname: "Nurbekov",
+        middleName: "Zhunsaliev",
+        birthDate: "13.05.2019"
+      },
+      permissions: [
+        Permissions.loginPage.code,
+        Permissions.homePage.code,
+      ]
     }),
-  checkAuth: user =>
-    apiImitation(1000, {
-      username: "Zhayik",
-      token: "dfgdfgdfg"
-    })
-};
-
-export const AuthApi = {
   checkAuth: token =>
     apiImitation(1000, {
       user: {
