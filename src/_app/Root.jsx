@@ -1,23 +1,24 @@
 import React, { useEffect } from "react";
-import { compose } from "redux";
-import { withRouter } from "react-router-dom";
 import { NotificationContainer } from "react-notifications";
-import withTranslation from "../_hoc/withTranslation";
-import routers from "../_helpers/routers";
+import routers, { homePageRoute, tabRouters } from "../_helpers/routers";
 import ProtectedRoute from "./ProtectedRoute";
 import { Route, Switch } from "react-router-dom";
 import { checkAuth, loginModule } from "../LoginPage/LoginDucks";
 import { connect } from "react-redux";
 import Page404 from "../components/Page404/Page404";
+import Toolbar from "../components/Toolbar/Toolbar";
+import TopTabs from "../components/TopTabs/TopTabs";
+import { uef } from "../utils/uef";
 
 const Root = ({ checkAuth, loading, user, permissions }) => {
-  useEffect(() => {
-    checkAuth();
-  }, []);
+  useEffect(uef(checkAuth), []);
+  const homePagePath = homePageRoute.path;
   return (
     <>
       <NotificationContainer />
-      <div>
+      <Toolbar homePagePath={homePagePath} />
+      <div className="content content-width mt2">
+        <Route path={tabRouters} render={() => <TopTabs />} />
         <Switch>
           {routers.map(route => (
             <ProtectedRoute
@@ -26,9 +27,10 @@ const Root = ({ checkAuth, loading, user, permissions }) => {
               loading={loading}
               user={user}
               permissions={permissions}
+              homePagePath={homePagePath}
             />
           ))}
-          <Route render={() => <Page404/>} />
+          <Route render={() => <Page404 />} />
         </Switch>
       </div>
     </>
@@ -41,11 +43,7 @@ const mapStateToProps = state => ({
   loading: state[loginModule].loading
 });
 
-export default compose(
-  withRouter,
-  withTranslation,
-  connect(
-    mapStateToProps,
-    { checkAuth }
-  )
+export default connect(
+  mapStateToProps,
+  { checkAuth }
 )(Root);
