@@ -60,6 +60,7 @@ export const LoginApi = {
         birthDate: "13.05.2019"
       },
       permissions: [
+        Permissions.messagesPage.code
       ]
     })
 };
