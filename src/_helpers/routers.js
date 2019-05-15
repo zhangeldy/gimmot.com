@@ -1,23 +1,29 @@
 import LoginPage from "../LoginPage/LoginPage";
 import HomePage from "../HomePage/HomePage";
 import { Permissions } from "./Permissions";
+import MessagesPage from "../MessagesPage/MessagesPage";
 
 
 const routers = [
   {
     path: "/",
-    textCode: "Главная",
+    textCode: "homePage",
     component: HomePage,
     withoutAuth: true,
     exact: true,
-    permission: Permissions.homePage.code
   },
   {
     path: "/login",
-    textCode: "Авторизация",
+    textCode: "loginPage",
     component: LoginPage,
     withoutAuth: true,
-    permission: Permissions.loginPage.code,
+    exact: true
+  },
+  {
+    path: "/messages",
+    textCode: "messagesPage",
+    component: MessagesPage,
+    permission: Permissions.messagesPage.code,
     exact: true
   }
 ];

@@ -1,6 +1,8 @@
 import React from "react";
 import { Route, Redirect } from "react-router-dom";
 import Content from "./Content";
+import PageLoader from "../components/PageLoader/PageLoader";
+import Page403 from "../components/Page403/Page403";
 
 const ProtectedRoute = ({ component: Component, ...rest }) => (
   <Route
@@ -13,7 +15,7 @@ const ProtectedRoute = ({ component: Component, ...rest }) => (
       }
 
       if (rest.loading) {
-        return <div>паждите...</div>;
+        return <PageLoader />;
       }
 
       // перенаправляем если не авторизован
@@ -27,7 +29,7 @@ const ProtectedRoute = ({ component: Component, ...rest }) => (
       }
 
       if (rest.permission && !rest.permissions.includes(rest.permission)) {
-        return <div>доступ запрещен</div>;
+        return <Page403 />;
       }
 
       return <Content {...props} routeProps={routeProps} />;

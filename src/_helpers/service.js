@@ -49,12 +49,10 @@ export const LoginApi = {
         birthDate: "13.05.2019"
       },
       permissions: [
-        Permissions.loginPage.code,
-        Permissions.homePage.code,
       ]
     }),
   checkAuth: token =>
-    apiImitation(1000, {
+    apiImitation(100, {
       user: {
         name: "Zhangeldy",
         surname: "Nurbekov",
@@ -62,8 +60,6 @@ export const LoginApi = {
         birthDate: "13.05.2019"
       },
       permissions: [
-        Permissions.loginPage.code,
-        Permissions.homePage.code,
       ]
     })
 };

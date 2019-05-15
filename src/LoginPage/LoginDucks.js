@@ -7,7 +7,7 @@ import { NotificationManager } from "react-notifications";
  * Constants
  */
 
-export const loginModule = "loginModule";
+export const loginModule = "login";
 export const USER = `${loginModule}/USER`;
 export const LOGIN = `${loginModule}/LOGIN`;
 

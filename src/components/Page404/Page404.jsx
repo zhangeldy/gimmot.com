@@ -3,16 +3,21 @@ import withTranslation from "../../_hoc/withTranslation";
 import { CssBox } from "./Page404Style";
 import Button from "../../_ui/Button/Button";
 import Translate from "../Translate";
+import { Link } from "react-router-dom";
 
 function Page404({ t }) {
   return (
     <CssBox>
-      <div className="error">404</div>
-      <div className="oops">{t("page404_oops")}</div>
-      <div className="not-found">
-        <Translate id="page404_not_found" />
+      <div className="container">
+        <div className="error">404</div>
+        <div className="oops">{t("page404_oops")}</div>
+        <div className="not-found">
+          <Translate id="page404_not_found" />
+        </div>
+        <Link to="/">
+          <Button text={t("page404_tohome")} size="large" />
+        </Link>
       </div>
-      <Button text={t("page404_tohome")} size="large" />
     </CssBox>
   );
 }

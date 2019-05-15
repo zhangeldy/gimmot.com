@@ -1,10 +1,6 @@
 export const Permissions = {
-  loginPage: {
-    code: 'loginPage',
-    textCode: 'Доступ к странице авторизаций'
+  messagesPage: {
+    code: 'messagesPage',
+    textCode: 'Доступ к странице сообщений'
   },
-  homePage: {
-    code: 'homePage',
-    textCode: 'Доступ к странице авторизаций'
-  }
 };
