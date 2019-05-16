@@ -3,9 +3,9 @@ import styled from "styled-components";
 export const CssBox = styled.div`
   color: #404040;
   display: flex;
-  height: 100vh;
+  height: calc(100vh - 48px);
   text-align: center;
-  
+
   .container {
     margin: auto;
     transform: translateY(-100px);

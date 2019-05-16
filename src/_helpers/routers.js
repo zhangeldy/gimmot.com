@@ -1,5 +1,4 @@
 import LoginPage from "../LoginPage/LoginPage";
-import HomePage from "../HomePage/HomePage";
 import { Permissions } from "./Permissions";
 import MessagesPage from "../MessagesPage/MessagesPage";
 import PeoplesPage from "../PeoplesPage/PeoplesPage";
@@ -14,7 +13,7 @@ const routers = [
     exact: true
   },
   {
-    path: "/",
+    path: "/adverts",
     textCode: "advertsPage",
     component: AdvertsPage,
     isHomePage: true,

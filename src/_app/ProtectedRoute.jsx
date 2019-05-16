@@ -8,7 +8,11 @@ const ProtectedRoute = ({ component: Component, ...rest }) => (
     {...rest}
     render={routeProps => {
       if (rest.withoutAuth) {
-        return <Component {...routeProps} />;
+        return (
+          <div className="content content-width">
+            <Component {...routeProps} />
+          </div>
+        );
       }
 
       if (rest.loading) {
@@ -29,7 +33,11 @@ const ProtectedRoute = ({ component: Component, ...rest }) => (
         return <Page403 />;
       }
 
-      return <Component {...routeProps} />;
+      return (
+        <div className="content content-width">
+          <Component {...routeProps} />
+        </div>
+      );
     }}
   />
 );

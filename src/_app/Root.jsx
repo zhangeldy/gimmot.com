@@ -12,27 +12,24 @@ import { uef } from "../utils/uef";
 
 const Root = ({ checkAuth, loading, user, permissions }) => {
   useEffect(uef(checkAuth), []);
-  const homePagePath = homePageRoute.path;
   return (
     <>
       <NotificationContainer />
-      <Toolbar homePagePath={homePagePath} />
-      <div className="content content-width mt2">
-        <Route path={tabRouters} render={() => <TopTabs />} />
-        <Switch>
-          {routers.map(route => (
-            <ProtectedRoute
-              {...route}
-              key={route.path}
-              loading={loading}
-              user={user}
-              permissions={permissions}
-              homePagePath={homePagePath}
-            />
-          ))}
-          <Route render={() => <Page404 />} />
-        </Switch>
-      </div>
+      <Toolbar homePagePath={homePageRoute.path} />
+      <Route path={tabRouters} render={() => <TopTabs />} />
+      <Switch>
+        {routers.map(route => (
+          <ProtectedRoute
+            {...route}
+            key={route.path}
+            loading={loading}
+            user={user}
+            permissions={permissions}
+            homePagePath={homePageRoute.path}
+          />
+        ))}
+        <Route render={() => <Page404 />} />
+      </Switch>
     </>
   );
 };

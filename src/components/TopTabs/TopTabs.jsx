@@ -1,16 +1,16 @@
 import React from "react";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
-import MessageIcon from "@material-ui/icons/Message";
-import PersonPinIcon from "@material-ui/icons/PersonPin";
+import AdvertIcon from "@material-ui/icons/ViewDay";
+import MessageIcon from "@material-ui/icons/Forum";
+import PeopleIcon from "@material-ui/icons/PersonPin";
 import { CssBox } from "./TopTabsStyle";
 import { history } from "../../_helpers/store";
 import { withRouter } from "react-router-dom";
 
 function TopTabs({ match }) {
-  console.log(match)
   return (
-    <CssBox>
+    <CssBox className="content-width mt2">
       <Tabs
         value={match.path}
         onChange={(ev, path) => history.push(path)}
@@ -18,9 +18,9 @@ function TopTabs({ match }) {
         indicatorColor="primary"
         textColor="primary"
       >
-        <Tab value="/" icon={<MessageIcon />} />
-        <Tab value="/peoples" icon={<PersonPinIcon />} />
-        <Tab value="/messages" icon={<PersonPinIcon />} />
+        <Tab value="/adverts" icon={<AdvertIcon />} />
+        <Tab value="/peoples" icon={<PeopleIcon />} />
+        <Tab value="/messages" icon={<MessageIcon />} />
       </Tabs>
     </CssBox>
   );
