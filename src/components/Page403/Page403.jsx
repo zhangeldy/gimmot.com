@@ -12,7 +12,7 @@ function Page403({ t }) {
         <div className="oops">{t("page403_oops")}</div>
         <div className="not-found">{t("page403_access")}</div>
         <Link to="/">
-          <Button text={t("page403_tohome")} size="large" />
+          <Button text={t("page403_toHome")} size="large" />
         </Link>
       </div>
     </CssBox>

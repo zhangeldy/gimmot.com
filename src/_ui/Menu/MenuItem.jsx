@@ -3,7 +3,7 @@ import MuiMenuItem from "@material-ui/core/MenuItem";
 
 function MenuItem(props) {
   return (
-    <MuiMenuItem style={{ paddingTop: 5, paddingBottom: 5 }} {...props}>
+    <MuiMenuItem style={{ paddingTop: 3, paddingBottom: 3 }} {...props}>
       {props.children}
     </MuiMenuItem>
   );

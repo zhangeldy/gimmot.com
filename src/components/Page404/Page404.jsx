@@ -12,10 +12,10 @@ function Page404({ t }) {
         <div className="error">404</div>
         <div className="oops">{t("page404_oops")}</div>
         <div className="not-found">
-          <Translate id="page404_not_found" />
+          <Translate id="page404_notFound" />
         </div>
         <Link to="/">
-          <Button text={t("page404_tohome")} size="large" />
+          <Button text={t("page404_toHome")} size="large" />
         </Link>
       </div>
     </CssBox>

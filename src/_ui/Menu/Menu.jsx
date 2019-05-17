@@ -4,14 +4,15 @@ import MuiMenu from "@material-ui/core/Menu";
 export default function Menu({ anchor, onClose, children, ...rest }) {
   return (
     <MuiMenu
+      disableAutoFocusItem
       anchorEl={anchor}
       open={Boolean(anchor)}
       anchorOrigin={{
-        vertical: "bottom",
+        vertical: "top",
         horizontal: "right"
       }}
       transformOrigin={{
-        vertical: "bottom",
+        vertical: "top",
         horizontal: "right"
       }}
       {...rest}

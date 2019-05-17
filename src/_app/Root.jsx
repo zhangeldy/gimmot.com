@@ -1,10 +1,6 @@
 import React, { useEffect } from "react";
 import { NotificationContainer } from "react-notifications";
-import routers, {
-  homePageRoute,
-  loginPageRoute,
-  tabRouters
-} from "../_helpers/routers";
+import routers, { PATHS } from "../_helpers/routers";
 import ProtectedRoute from "./ProtectedRoute";
 import { Route, Switch } from "react-router-dom";
 import { checkAuth, loginModule } from "../LoginPage/LoginDucks";
@@ -19,8 +15,8 @@ const Root = ({ checkAuth, loading, user, permissions }) => {
   return (
     <>
       <NotificationContainer />
-      <Toolbar homePagePath={homePageRoute.path} />
-      <Route path={tabRouters} render={() => <TopTabs user={user} />} />
+      <Toolbar user={user} />
+      <Route path={PATHS.topTab} render={() => <TopTabs user={user} />} />
       <Switch>
         {routers.map(route => (
           <ProtectedRoute
@@ -29,8 +25,6 @@ const Root = ({ checkAuth, loading, user, permissions }) => {
             loading={loading}
             user={user}
             permissions={permissions}
-            homePagePath={homePageRoute.path}
-            loginPagePath={loginPageRoute.path}
           />
         ))}
         <Route render={() => <Page404 />} />

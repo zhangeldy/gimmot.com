@@ -40,10 +40,10 @@ const routers = [
   }
 ];
 
-export const tabRouters = routers.filter(item => item.withTopTab).map(item => item.path);
-
-export const homePageRoute = routers.find(item => item.isHomePage);
-
-export const loginPageRoute = routers.find(item => item.isLoginPage);
+export const PATHS = {
+  topTab: routers.filter(item => item.withTopTab).map(item => item.path),
+  homePage: routers.find(item => item.isHomePage).path,
+  loginPage: routers.find(item => item.isLoginPage).path
+};
 
 export default routers;
