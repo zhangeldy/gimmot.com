@@ -5,6 +5,7 @@ export const CssBox = styled.div`
   top: 0;
   z-index: 2;
   .logo {
+    flex-grow: 1;
     img {
       transform: translateY(3px);
     }
