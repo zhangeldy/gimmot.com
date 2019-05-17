@@ -52,7 +52,7 @@ export const LoginApi = {
       ]
     }),
   checkAuth: token =>
-    apiImitation(2000, {
+    apiImitation(100, {
       user: {
         name: "Zhangeldy",
         surname: "Nurbekov",
