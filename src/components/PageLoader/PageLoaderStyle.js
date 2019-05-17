@@ -3,12 +3,16 @@ import Color from "../../_helpers/Color";
 
 export const CssBox = styled.div`
   #cube-loader {
+    background-color: #F0F2F5;
     align-items: center;
     display: flex;
-    height: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
     width: 100%;
     position: fixed;
-    transform: translateY(-50px);
+
     & .caption {
       margin: 0 auto;
     }

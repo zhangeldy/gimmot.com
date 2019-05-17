@@ -10,6 +10,7 @@ import { NotificationManager } from "react-notifications";
 export const loginModule = "login";
 export const USER = `${loginModule}/USER`;
 export const LOGIN = `${loginModule}/LOGIN`;
+export const LOADING = `${loginModule}/LOADING`;
 
 /**
  * Reducer
@@ -27,6 +28,9 @@ export default createReducer(initialState, {
     state.user = action.user;
     state.permissions = action.permissions;
     state.loading = false;
+  },
+  [LOADING]: (state, action) => {
+    state.loading = action.loading;
   }
 });
 
@@ -38,9 +42,13 @@ export const checkAuth = () => async dispatch => {
   try {
     let token = localStorage.getItem("token");
     let { data } = await LoginApi.checkAuth(token);
-    dispatch({ type: USER, ...data });
+    if (data) {
+      dispatch({ type: USER, ...data });
+    }
   } catch (e) {
     console.error(e);
+  } finally {
+    dispatch({ type: LOADING, loading: false });
   }
 };
 

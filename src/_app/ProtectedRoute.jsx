@@ -7,7 +7,7 @@ const ProtectedRoute = ({ component: Component, ...rest }) => (
   <Route
     {...rest}
     render={routeProps => {
-      if (rest.withoutAuth) {
+      if (rest.withoutAuth && rest.path !== rest.loginPagePath) {
         return (
           <div className="content content-width">
             <Component {...routeProps} />
@@ -21,11 +21,11 @@ const ProtectedRoute = ({ component: Component, ...rest }) => (
 
       // перенаправляем если не авторизован
       if (!rest.withoutAuth && rest.user === null) {
-        return <Redirect to="/login" />;
+        return <Redirect to={rest.loginPagePath} />;
       }
 
       // перенаправляем если авторизован
-      if (rest.user && rest.path === "/login") {
+      if (rest.user && rest.path === rest.loginPagePath) {
         return <Redirect to={rest.homePagePath} />;
       }
 
