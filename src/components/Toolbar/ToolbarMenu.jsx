@@ -12,30 +12,23 @@ import AccessIcon from "@material-ui/icons/Lock";
 
 function ToolbarMenu({ t }) {
   const [anchor, setAnchor] = useState(null);
+  const menuItems = [
+    { text: t("toolbarMenu_profile"), path: "/", icon: AccountIcon },
+    { text: t("toolbarMenu_settings"), path: "/", icon: SettingsIcon },
+    { text: t("toolbarMenu_myAdverts"), path: "/", icon: MyAdvertsIcon },
+    { text: t("toolbarMenu_favorite"), path: "/", icon: FavoriteIcon },
+    { text: t("toolbarMenu_blackList"), path: "/", icon: BlackListIcon },
+    { text: t("toolbarMenu_accessPhoto"), path: "/", icon: AccessIcon }
+  ];
   return (
     <div>
       <IconButton color="inherit" onClick={ev => setAnchor(ev.currentTarget)}>
         <AccountIcon />
       </IconButton>
       <Menu anchor={anchor} style={{ marginTop: 35 }} onClose={setAnchor}>
-        <MenuItem icon={<AccountIcon style={{ fontSize: 17 }} />}>
-          {t("toolbarMenu_profile")}
-        </MenuItem>
-        <MenuItem icon={<SettingsIcon style={{ fontSize: 17 }} />}>
-          {t("toolbarMenu_settings")}
-        </MenuItem>
-        <MenuItem icon={<MyAdvertsIcon style={{ fontSize: 17 }} />}>
-          {t("toolbarMenu_myAdverts")}
-        </MenuItem>
-        <MenuItem icon={<FavoriteIcon style={{ fontSize: 17 }} />}>
-          {t("toolbarMenu_favorite")}
-        </MenuItem>
-        <MenuItem icon={<BlackListIcon style={{ fontSize: 17 }} />}>
-          {t("toolbarMenu_blackList")}
-        </MenuItem>
-        <MenuItem icon={<AccessIcon style={{ fontSize: 17 }} />}>
-          {t("toolbarMenu_accessPhoto")}
-        </MenuItem>
+        {menuItems.map(({ text, icon: Icon }) => (
+          <MenuItem icon={<Icon style={{ fontSize: 17 }} />}>{text}</MenuItem>
+        ))}
       </Menu>
     </div>
   );
