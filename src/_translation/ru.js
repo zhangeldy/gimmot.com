@@ -9,6 +9,14 @@ export const RU_TRANSLATION = {
     'page403_access': 'У вас нет прав для посещения этой страницы.',
     'page403_toHome': 'на главную',
 
+    'permission_messagesPage': 'Доступ к странице "Сообщений"',
+    'permission_blackListPage': 'Доступ к странице "Черный список"',
+    'permission_favoritesPage': 'Доступ к странице "Избранные"',
+    'permission_myAdvertsPage': 'Доступ к странице "Мои объявления"',
+    'permission_photoAccessPage': 'Доступ к странице "Доступ к фото"',
+    'permission_profilePage': 'Доступ к странице "Профиль"',
+    'permission_settingsPage': 'Доступ к странице "Настройки"',
+
     'toolbar_login': 'Войти',
 
     'toolbarMenu_profile': 'Профиль',

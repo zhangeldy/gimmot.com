@@ -18,8 +18,9 @@ const Root = ({ checkAuth, loading, user, permissions }) => {
       <Toolbar user={user} />
       <Route path={PATHS.topTab} render={() => <TopTabs user={user} />} />
       <Switch>
-        {routers.map(route => (
+        {Object.values(routers).map(route => (
           <ProtectedRoute
+            exact
             {...route}
             key={route.path}
             loading={loading}
