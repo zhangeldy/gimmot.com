@@ -1,7 +1,7 @@
 import { createReducer } from "redux-starter-kit";
-import { RU_TRANSLATION } from "../../_locale/ru";
-import { KK_TRANSLATION } from "../../_locale/kk";
-import { EN_TRANSLATION } from "../../_locale/en";
+import { RU_TRANSLATION } from "../../_translation/ru";
+import { KK_TRANSLATION } from "../../_translation/kk";
+import { EN_TRANSLATION } from "../../_translation/en";
 
 /**
  * Constants

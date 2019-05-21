@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { CssBox } from "./ToolbarStyle";
 import Logo from "../../_media/logo40x40.png";
 import ToolbarMenu from "./ToolbarMenu";
-import Button from "../../_ui/Button/Button";
+import InheritButton from "../../_ui/Button/InheritButton";
 import { PATHS } from "../../_helpers/routers";
 import withTranslation from "../../_hoc/withTranslation";
 import { history } from "../../_helpers/store";
@@ -20,10 +20,8 @@ function Toolbar({ user, t }) {
             <img src={Logo} alt="logotype" />
           </Link>
           <IFAuth children={<ToolbarMenu />} />
-          {!Boolean(user) && (
-            <Button
-              color="inherit"
-              variant="text"
+          {!user && (
+            <InheritButton
               text={t("toolbar_login")}
               onClick={() => history.push(PATHS.loginPage)}
             />
