@@ -28,7 +28,7 @@ function ToolbarMenu({ t }) {
       </IconButton>
       <Menu anchor={anchor} style={{ marginTop: 35 }} onClose={setAnchor}>
         {menuItems.map(({ text, path, icon: Icon }) => (
-          <Link to={path}>
+          <Link to={path} key={path} onClick={() => setAnchor(null)}>
             <MenuItem icon={<Icon style={{ fontSize: 17 }} />}>{text}</MenuItem>
           </Link>
         ))}
