@@ -1,7 +1,7 @@
 import { LoginApi } from "../../_helpers/service";
 import { history } from "../../_helpers/store";
-import { NotificationManager } from "react-notifications";
-import createReducer from "../../utils/createReducer";
+import { Notice } from "../../utils/Notice";
+import { createReducer } from "redux-starter-kit";
 
 /**
  * Constants
@@ -24,8 +24,13 @@ const initialState = {
 };
 
 export default createReducer(initialState, {
-  [USER]: "action",
-  [LOADING]: "action"
+  [USER]: (state, action) => {
+    state.user = action.user;
+    state.permissions = action.permissions;
+  },
+  [LOADING]: (state, action) => {
+    state.loading = action.loading;
+  }
 });
 
 /**
@@ -54,6 +59,6 @@ export const login = (login, password) => async dispatch => {
     history.push("/");
   } catch (e) {
     console.error(e);
-    NotificationManager.success("Не удалось авторизоваться");
+    Notice.error("Не удалось авторизоваться")
   }
 };
