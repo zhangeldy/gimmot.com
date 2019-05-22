@@ -2,8 +2,8 @@ import React from "react";
 import withTranslation from "../../_hoc/withTranslation";
 import { CssBox } from "./Page404Style";
 import Button from "../../_ui/Button/Button";
-import Translate from "../Translate";
 import { Link } from "react-router-dom";
+import Translate from "../../components/Translate";
 
 function Page404({ t }) {
   return (

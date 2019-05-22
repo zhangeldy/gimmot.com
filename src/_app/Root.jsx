@@ -5,7 +5,7 @@ import ProtectedRoute from "./ProtectedRoute";
 import { Route, Switch } from "react-router-dom";
 import { checkAuth, loginModule } from "../pages/LoginPage/LoginDucks";
 import { connect } from "react-redux";
-import Page404 from "../components/Page404/Page404";
+import Page404 from "../pages/Page404/Page404";
 import Toolbar from "../components/Toolbar/Toolbar";
 import TopTabs from "../components/TopTabs/TopTabs";
 import { uef } from "../utils/uef";
