@@ -9,16 +9,17 @@ import MyAdvertsIcon from "@material-ui/icons/ViewDay";
 import FavoriteIcon from "@material-ui/icons/Star";
 import BlackListIcon from "@material-ui/icons/Block";
 import AccessIcon from "@material-ui/icons/Lock";
+import { Link } from "react-router-dom";
 
 function ToolbarMenu({ t }) {
   const [anchor, setAnchor] = useState(null);
   const menuItems = [
-    { text: t("toolbarMenu_profile"), path: "/", icon: AccountIcon },
-    { text: t("toolbarMenu_settings"), path: "/", icon: SettingsIcon },
-    { text: t("toolbarMenu_myAdverts"), path: "/", icon: MyAdvertsIcon },
-    { text: t("toolbarMenu_favorite"), path: "/", icon: FavoriteIcon },
-    { text: t("toolbarMenu_blackList"), path: "/", icon: BlackListIcon },
-    { text: t("toolbarMenu_accessPhoto"), path: "/", icon: AccessIcon }
+    { text: t("toolbarMenu_profile"), path: "/profile", icon: AccountIcon },
+    { text: t("toolbarMenu_settings"), path: "/settings", icon: SettingsIcon },
+    { text: t("toolbarMenu_myAdverts"), path: "/myAdverts", icon: MyAdvertsIcon },
+    { text: t("toolbarMenu_favorite"), path: "/favorites", icon: FavoriteIcon },
+    { text: t("toolbarMenu_blackList"), path: "/blackList", icon: BlackListIcon },
+    { text: t("toolbarMenu_accessPhoto"), path: "/photoAccess", icon: AccessIcon }
   ];
   return (
     <div>
@@ -26,8 +27,10 @@ function ToolbarMenu({ t }) {
         <AccountIcon />
       </IconButton>
       <Menu anchor={anchor} style={{ marginTop: 35 }} onClose={setAnchor}>
-        {menuItems.map(({ text, icon: Icon }) => (
-          <MenuItem icon={<Icon style={{ fontSize: 17 }} />}>{text}</MenuItem>
+        {menuItems.map(({ text, path, icon: Icon }) => (
+          <Link to={path}>
+            <MenuItem icon={<Icon style={{ fontSize: 17 }} />}>{text}</MenuItem>
+          </Link>
         ))}
       </Menu>
     </div>

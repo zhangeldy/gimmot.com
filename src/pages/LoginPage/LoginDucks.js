@@ -1,6 +1,6 @@
 import { createReducer } from "redux-starter-kit";
-import { LoginApi } from "../_helpers/service";
-import { history } from "../_helpers/store";
+import { LoginApi } from "../../_helpers/service";
+import { history } from "../../_helpers/store";
 import { NotificationManager } from "react-notifications";
 
 /**

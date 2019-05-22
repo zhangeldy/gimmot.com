@@ -3,7 +3,7 @@ import { NotificationContainer } from "react-notifications";
 import routers, { PATHS } from "../_helpers/routers";
 import ProtectedRoute from "./ProtectedRoute";
 import { Route, Switch } from "react-router-dom";
-import { checkAuth, loginModule } from "../LoginPage/LoginDucks";
+import { checkAuth, loginModule } from "../pages/LoginPage/LoginDucks";
 import { connect } from "react-redux";
 import Page404 from "../components/Page404/Page404";
 import Toolbar from "../components/Toolbar/Toolbar";

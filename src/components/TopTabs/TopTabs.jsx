@@ -10,7 +10,7 @@ import { withRouter } from "react-router-dom";
 
 function TopTabs({ match, user }) {
   return (
-    <CssBox className="content-width mt2">
+    <CssBox className="content-width">
       <Tabs
         value={match.path}
         onChange={(ev, path) => history.push(path)}

@@ -1,26 +1,24 @@
-import LoginPage from "../LoginPage/LoginPage";
+import LoginPage from "../pages/LoginPage/LoginPage";
 import { Permissions } from "./Permissions";
-import MessagesPage from "../MessagesPage/MessagesPage";
-import PeoplesPage from "../PeoplesPage/PeoplesPage";
-import AdvertsPage from "../AdvertsPage/AdvertsPage";
-import BlackListPage from "../BlackListPage/BlackListPage";
-import FavoritesPage from "../FavoritesPage/FavoritesPage";
-import MyAdvertsPage from "../MyAdvertsPage/MyAdvertsPage";
-import PhotoAccessPage from "../PhotoAccessPage/PhotoAccessPage";
-import SettingsPage from "../SettingsPage/SettingsPage";
-import ProfilePage from "../ProfilePage/ProfilePage";
+import MessagesPage from "../pages/MessagesPage/MessagesPage";
+import PeoplesPage from "../pages/PeoplesPage/PeoplesPage";
+import AdvertsPage from "../pages/AdvertsPage/AdvertsPage";
+import BlackListPage from "../pages/BlackListPage/BlackListPage";
+import FavoritesPage from "../pages/FavoritesPage/FavoritesPage";
+import MyAdvertsPage from "../pages/MyAdvertsPage/MyAdvertsPage";
+import PhotoAccessPage from "../pages/PhotoAccessPage/PhotoAccessPage";
+import SettingsPage from "../pages/SettingsPage/SettingsPage";
+import ProfilePage from "../pages/ProfilePage/ProfilePage";
 
 const routers = {
   loginPage: {
     path: "/",
     component: LoginPage,
-    withoutAuth: true,
-    isLoginPage: true
+    withoutAuth: true
   },
   advertsPage: {
     path: "/adverts",
     component: AdvertsPage,
-    isHomePage: true,
     withoutAuth: true
   },
   peoplesPage: {
