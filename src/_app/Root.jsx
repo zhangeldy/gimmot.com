@@ -16,20 +16,22 @@ const Root = ({ checkAuth, loading, user, permissions }) => {
     <>
       <NotificationContainer />
       <Toolbar user={user} />
-      <Route path={PATHS.topTab} render={() => <TopTabs user={user} />} />
-      <Switch>
-        {Object.values(routers).map(route => (
-          <ProtectedRoute
-            exact
-            {...route}
-            key={route.path}
-            loading={loading}
-            user={user}
-            permissions={permissions}
-          />
-        ))}
-        <Route render={() => <Page404 />} />
-      </Switch>
+      <div style={{ width: 'calc(100vw - 20px)'}}>
+        <Route path={PATHS.topTab} render={() => <TopTabs user={user} />} />
+        <Switch>
+          {Object.values(routers).map(route => (
+            <ProtectedRoute
+              exact
+              {...route}
+              key={route.path}
+              loading={loading}
+              user={user}
+              permissions={permissions}
+            />
+          ))}
+          <Route render={() => <Page404 />} />
+        </Switch>
+      </div>
     </>
   );
 };
