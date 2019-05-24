@@ -10,7 +10,9 @@ export const CssBox = styled.div`
   color: white;
   .logo {
     flex-grow: 1;
-    img {
+    svg {
+      width: 40px;
+      height: 40px;
       transform: translateY(3px);
     }
   }

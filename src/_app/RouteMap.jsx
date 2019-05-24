@@ -10,7 +10,7 @@ const ProtectedRoute = ({ component: Component, ...rest }) => (
     render={routeProps => {
       if (rest.withoutAuth && rest.path !== routers.loginPage.path) {
         return (
-          <div className="content content-width">
+          <div className="content-width">
             <Component {...routeProps} />
           </div>
         );
@@ -35,7 +35,7 @@ const ProtectedRoute = ({ component: Component, ...rest }) => (
       }
 
       return (
-        <div className="content content-width">
+        <div className="content-width">
           <Component {...routeProps} />
         </div>
       );
@@ -43,4 +43,15 @@ const ProtectedRoute = ({ component: Component, ...rest }) => (
   />
 );
 
-export default ProtectedRoute;
+export default function RouteMap({ routes, user, permissions, loading }) {
+  return routes.map(route => (
+    <ProtectedRoute
+      exact
+      {...route}
+      key={route.path}
+      loading={loading}
+      user={user}
+      permissions={permissions}
+    />
+  ));
+}

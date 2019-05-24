@@ -2,7 +2,7 @@ import React from "react";
 import MuiToolbar from "@material-ui/core/Toolbar";
 import { Link } from "react-router-dom";
 import { CssBox } from "./ToolbarStyle";
-import Logo from "../../_media/logo40x40.png";
+import { ReactComponent as LogoIcon } from "../../_media/logo.svg";
 import ToolbarMenu from "./ToolbarMenu";
 import InheritButton from "../../_ui/Button/InheritButton";
 import routers from "../../_helpers/routers";
@@ -13,10 +13,10 @@ import IFAuth from "../IFAuth";
 function Toolbar({ user, t }) {
   return (
     <CssBox>
-      <div style={{ width: "calc(100vw - 20px)" }}>
+      <div className="scroll-fix">
         <MuiToolbar variant="dense" className="content-width">
           <Link className="logo" to={routers.advertsPage.path}>
-            <img src={Logo} alt="logotype" />
+            <LogoIcon/>
           </Link>
           <IFAuth children={<ToolbarMenu />} />
           {!user && (

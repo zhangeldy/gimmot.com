@@ -19,17 +19,20 @@ const routers = {
   advertsPage: {
     path: "/adverts",
     component: AdvertsPage,
-    withoutAuth: true
+    withoutAuth: true,
+    topTabs: true
   },
   peoplesPage: {
     path: "/peoples",
     component: PeoplesPage,
-    withoutAuth: true
+    withoutAuth: true,
+    topTabs: true
   },
   messagesPage: {
     path: "/messages",
     component: MessagesPage,
-    permission: Permissions.messagesPage.code
+    permission: Permissions.messagesPage.code,
+    topTabs: true
   },
   blacklistPage: {
     path: "/blacklist",

@@ -23,9 +23,11 @@ function ToolbarMenu({ t }) {
   ];
   return (
     <div>
-      <IconButton color="inherit" onClick={ev => setAnchor(ev.currentTarget)}>
-        <AccountIcon />
-      </IconButton>
+      <IconButton
+        color="inherit"
+        onClick={ev => setAnchor(ev.currentTarget)}
+        children={<AccountIcon />}
+      />
       <Menu anchor={anchor} style={{ marginTop: 35 }} onClose={setAnchor}>
         {menuItems.map(({ text, path, icon: Icon }) => (
           <Link to={path} key={path} onClick={() => setAnchor(null)}>

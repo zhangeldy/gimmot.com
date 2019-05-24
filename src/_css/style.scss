@@ -14,9 +14,10 @@ a {
   text-decoration: none;
 }
 
-.content {
+.paper {
   box-shadow: 0 1px 0 0 #d7d8db, 0 0 0 1px #e3e4e8;
   background-color: #ffffff;
+  border-radius: 4px;
 }
 
 .content-width {
@@ -24,6 +25,16 @@ a {
   width: 90%;
   margin: auto;
   padding: 0 !important;
+}
+
+.scroll-fix {
+  width: calc(100vw - 20px);
+}
+
+@media only screen and (max-width: 500px)  {
+  .scroll-fix {
+    width: 100vw;
+  }
 }
 
 /* Notification */

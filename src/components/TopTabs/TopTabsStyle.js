@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
 export const CssBox = styled.div`
-  background-color: #fafbfc;
-  box-shadow: 0 1px 0 0 #d7d8db, 0 0 0 1px #e3e4e8;
+  border-bottom: 1px solid #d7d8db;
+  position: sticky;
+  top: 48px;
+  background-color: rgb(240, 242, 245) !important;
+  z-index: 2;
 `;

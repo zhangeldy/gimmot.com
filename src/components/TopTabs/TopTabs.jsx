@@ -8,42 +8,52 @@ import { CssBox } from "./TopTabsStyle";
 import { history } from "../../_helpers/store";
 import { withRouter } from "react-router-dom";
 import { Link } from "react-router-dom";
+import SwipeableViews from "react-swipeable-views";
+import { PATHS } from "../../_helpers/routers";
 
-function TopTabs({ match, user }) {
+function TopTabs({ match, user, children }) {
   return (
-    <CssBox className="content-width">
-      <Tabs
-        value={match.path}
-        onChange={(ev, path) => history.push(path)}
-        variant="fullWidth"
-        indicatorColor="primary"
-        textColor="primary"
-        style={{ minHeight: 40 }}
+    <>
+      <CssBox className="content-width">
+        <Tabs
+          value={match.path}
+          onChange={(ev, path) => history.push(path)}
+          variant="fullWidth"
+          indicatorColor="primary"
+          textColor="primary"
+          style={{ minHeight: 40 }}
+        >
+          <Tab
+            component={Link}
+            value="/adverts"
+            to="/adverts"
+            icon={<AdvertIcon />}
+            style={{ minHeight: 40 }}
+          />
+          <Tab
+            component={Link}
+            value="/peoples"
+            to="/peoples"
+            icon={<PeopleIcon />}
+            style={{ minHeight: 40 }}
+          />
+          <Tab
+            component={Link}
+            value="/messages"
+            to="/messages"
+            icon={<MessageIcon />}
+            disabled={!user}
+            style={{ minHeight: 40 }}
+          />
+        </Tabs>
+      </CssBox>
+      <SwipeableViews
+        index={PATHS.topTab.indexOf(match.path)}
+        onChangeIndex={index => history.push(PATHS.topTab[index])}
       >
-        <Tab
-          component={Link}
-          value="/adverts"
-          to="/adverts"
-          icon={<AdvertIcon />}
-          style={{ minHeight: 40 }}
-        />
-        <Tab
-          component={Link}
-          value="/peoples"
-          to="/peoples"
-          icon={<PeopleIcon />}
-          style={{ minHeight: 40 }}
-        />
-        <Tab
-          component={Link}
-          value="/messages"
-          to="/messages"
-          icon={<MessageIcon />}
-          disabled={!user}
-          style={{ minHeight: 40 }}
-        />
-      </Tabs>
-    </CssBox>
+        {children}
+      </SwipeableViews>
+    </>
   );
 }
 
