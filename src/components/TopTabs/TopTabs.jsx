@@ -18,18 +18,21 @@ function TopTabs({ match, user }) {
         variant="fullWidth"
         indicatorColor="primary"
         textColor="primary"
+        style={{ minHeight: 40 }}
       >
         <Tab
           component={Link}
           value="/adverts"
           to="/adverts"
           icon={<AdvertIcon />}
+          style={{ minHeight: 40 }}
         />
         <Tab
           component={Link}
           value="/peoples"
           to="/peoples"
           icon={<PeopleIcon />}
+          style={{ minHeight: 40 }}
         />
         <Tab
           component={Link}
@@ -37,6 +40,7 @@ function TopTabs({ match, user }) {
           to="/messages"
           icon={<MessageIcon />}
           disabled={!user}
+          style={{ minHeight: 40 }}
         />
       </Tabs>
     </CssBox>
