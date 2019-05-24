@@ -6,4 +6,6 @@ export const CssBox = styled.div`
   top: 48px;
   background-color: rgb(240, 242, 245) !important;
   z-index: 2;
+  max-width: 905px;
+  width: 91%;
 `;
