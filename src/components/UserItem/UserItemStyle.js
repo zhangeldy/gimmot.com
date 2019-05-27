@@ -20,12 +20,13 @@ export const CssBox = styled.div`
     cursor: pointer;
     font-size: 14px;
     font-weight: 500;
-
+    line-height: 20px;
     :hover {
       text-decoration: underline;
     }
   }
   .user-params {
+    line-height: 20px;
     color: #939393;
     font-size: 12.5px;
     user-select: none;

@@ -25,5 +25,9 @@ export const RU_TRANSLATION = {
     'toolbarMenu_favorite': 'Избранные',
     'toolbarMenu_blackList': 'Черный список',
     'toolbarMenu_accessPhoto': 'Доступ к фотографиям',
+
+    'advertsFilter_addAdvert': 'Написать объявление',
+    'advertsFilter_filter': 'Фильтр',
+    'advertsFilter_favorites': 'Избранные',
   }
 };

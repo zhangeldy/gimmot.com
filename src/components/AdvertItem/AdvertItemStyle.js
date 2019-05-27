@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const CssBox = styled.div`
-  padding: 16px 16px 10px;
+  padding: 10px 15px;
 
   .time {
     user-select: none;
