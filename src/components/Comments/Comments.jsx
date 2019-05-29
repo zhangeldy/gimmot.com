@@ -1,11 +1,16 @@
 import React from "react";
 import { CssBox } from "../Comments/CommentsStyle";
-
+import Comment from "./Comment";
 
 function Comments(props) {
   return (
     <CssBox>
-      <input placeholder="Написать комментарий..."/>
+      <div className="comments">
+        <Comment />
+      </div>
+      <div className="add-comment">
+        <input placeholder="Написать комментарий..." />
+      </div>
     </CssBox>
   );
 }

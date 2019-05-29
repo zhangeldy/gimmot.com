@@ -14,6 +14,7 @@ function AdvertItem(props) {
         text text text text text text text text text text text text text text
       </div>
       <Marks />
+      <Comments/>
     </CssBox>
   );
 }
