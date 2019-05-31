@@ -8,12 +8,14 @@ import { Filter } from "./AdvertsStyle";
 import InputBase from "@material-ui/core/InputBase";
 
 function AdvertsFilter({ t }) {
-  const [openBlock, setOpenBlock] = useState(false);
+  const [isOpen, openBlock] = useState(false);
   const [text, setText] = useState("");
+
   return (
-    <Filter className="paper my2 p1" onBlur={() => setOpenBlock(false)}>
+    <Filter className="paper my2 p1" onBlur={() => openBlock(false)}>
       <InputBase
-        onFocus={() => setOpenBlock(true)}
+        className="input-text"
+        onFocus={() => openBlock(true)}
         onChange={ev => {
           let value = ev.target.value.replace(String.fromCharCode(10), "");
           if (value.length < 200) {
@@ -25,9 +27,8 @@ function AdvertsFilter({ t }) {
         rowsMax="2"
         fullWidth
         value={text}
-        style={{ overflow: 'hidden'}}
       />
-      {!openBlock && (
+      {!isOpen && (
         <div className="right">
           <Tooltip title={t("advertsFilter_favorites")} placement="top">
             <IconButton
