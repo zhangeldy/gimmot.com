@@ -11,7 +11,7 @@ export const CssBox = styled.div`
       width: 100%;
       height: 40px;
       padding: 7px 13px;
-      font-size: 14px;
+      font-size: 13px;
       :focus {
         border: none;
         box-shadow: none;
