@@ -7,6 +7,10 @@ function Comments(props) {
     <CssBox>
       <div className="comments">
         <Comment />
+        <Comment />
+        <Comment />
+        <Comment />
+        <Comment />
       </div>
       <div className="add-comment">
         <input placeholder="Написать комментарий..." />

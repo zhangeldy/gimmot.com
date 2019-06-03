@@ -18,17 +18,11 @@ export const CssBox = styled.div`
   .user-name {
     color: ${Color.primary};
     cursor: pointer;
-    font-size: 14px;
-    font-weight: 500;
+    font-size: 13px;
+    font-weight: 600;
     line-height: 20px;
     :hover {
       text-decoration: underline;
     }
-  }
-  .user-params {
-    line-height: 20px;
-    color: #939393;
-    font-size: 12.5px;
-    user-select: none;
   }
 `;

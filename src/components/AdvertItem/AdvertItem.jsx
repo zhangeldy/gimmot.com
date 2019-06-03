@@ -7,14 +7,16 @@ import Comments from "../Comments/Comments";
 function AdvertItem(props) {
   return (
     <CssBox className="paper my1">
-      <div className="right time">18 мая в 18:13</div>
-      <UserItem short />
-      <div className="text">
-        text text text text text text text text text text text text text text
-        text text text text text text text text text text text text text text
+      <div className="ai">
+        <div className="right imperceptible">18 мая в 18:13</div>
+        <UserItem advert />
+        <div className="text">
+          text text text text text text text text text text text text text text
+          text text text text text text text text text text text text text text
+        </div>
+        <Marks />
       </div>
-      <Marks />
-      <Comments/>
+      <Comments />
     </CssBox>
   );
 }

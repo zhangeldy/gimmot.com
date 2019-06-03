@@ -1,6 +1,6 @@
 * {
   box-sizing: border-box;
-  font-family: "Segoe UI", "Chinese Quote", Tahoma, SansSerif, sans-serif;
+  font-family: -apple-system,BlinkMacSystemFont,Roboto,Open Sans,Helvetica Neue,sans-serif;
 }
 
 body {
@@ -21,7 +21,7 @@ a {
 }
 
 .content-width {
-  max-width: 900px;
+  max-width: 650px;
   width: 90%;
   margin: auto;
   padding: 0 !important;
@@ -31,7 +31,7 @@ a {
   width: calc(100vw - 20px);
 }
 
-@media only screen and (max-width: 500px)  {
+@media only screen and (max-width: 500px) {
   .scroll-fix {
     width: 100vw;
   }
@@ -59,4 +59,11 @@ a {
 .notification:before {
   left: 25px !important;
   font-size: 19px !important;
+}
+
+.imperceptible {
+  user-select: none;
+  color: #939393;
+  font-size: 12.5px;
+  white-space: nowrap;
 }
