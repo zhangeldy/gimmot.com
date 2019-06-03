@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import IconButton from "@material-ui/core/IconButton";
 import MenuItem from "../../_ui/Menu/MenuItem";
 import Menu from "../../_ui/Menu/Menu";
 import withTranslation from "../../_hoc/withTranslation";
@@ -10,6 +9,7 @@ import FavoriteIcon from "@material-ui/icons/Star";
 import BlackListIcon from "@material-ui/icons/Block";
 import AccessIcon from "@material-ui/icons/Lock";
 import { Link } from "react-router-dom";
+import IconButton from "../../_ui/Button/IconButton";
 
 function ToolbarMenu({ t }) {
   const [anchor, setAnchor] = useState(null);
@@ -26,7 +26,7 @@ function ToolbarMenu({ t }) {
       <IconButton
         color="inherit"
         onClick={ev => setAnchor(ev.currentTarget)}
-        children={<AccountIcon />}
+        icon={<AccountIcon />}
       />
       <Menu anchor={anchor} style={{ marginTop: 35 }} onClose={setAnchor}>
         {menuItems.map(({ text, path, icon: Icon }) => (

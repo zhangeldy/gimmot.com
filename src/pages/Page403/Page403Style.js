@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const CssBox = styled.div`
   color: #404040;
   display: flex;
-  height: calc(100vh - 48px);
+  height: calc(100vh - 68px);
   text-align: center;
 
   .container {

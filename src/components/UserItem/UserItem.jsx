@@ -7,9 +7,9 @@ const imgLink =
 function UserItem({ advert, comment }) {
   if (advert) {
     return (
-      <CssBox className="flex flex-wrap items-center">
-        <div className="col user-name mr1">Жангельды, 29</div>
-        <div className="col imperceptible">Астана, Гетеро, 170/55/16</div>
+      <CssBox>
+        <div className="user-name mr1">Жангельды, 29</div>
+        <div className="imperceptible">Астана, Гетеро, 170/55/16</div>
       </CssBox>
     );
   }

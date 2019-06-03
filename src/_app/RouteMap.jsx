@@ -4,7 +4,7 @@ import PageLoader from "../components/PageLoader/PageLoader";
 import Page403 from "../pages/Page403/Page403";
 import routers from "../_helpers/routers";
 
-const ProtectedRoute = ({ component: Component, ...rest }) => (
+export const ProtectedRoute = ({ component: Component, ...rest }) => (
   <Route
     {...rest}
     render={routeProps => {

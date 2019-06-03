@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { NotificationContainer } from "react-notifications";
 import routers, { PATHS } from "../_helpers/routers";
-import RouteMap from "./RouteMap";
+import RouteMap, { ProtectedRoute } from "./RouteMap";
 import { Route, Switch } from "react-router-dom";
 import { checkAuth, loginModule } from "../pages/LoginPage/LoginDucks";
 import { connect } from "react-redux";
@@ -27,11 +27,15 @@ const Root = ({ checkAuth, ...rest }) => {
             render={() => (
               <TopTabs
                 user={rest.user}
-                children={RouteMap({ ...rest, routes: tabsRoutes })}
+                children={tabsRoutes.map(route => (
+                  <ProtectedRoute exact {...route} key={route.path} {...rest} />
+                ))}
               />
             )}
           />
-          <RouteMap routes={allRoutes} {...rest} />
+          {allRoutes.map(route => (
+            <ProtectedRoute exact {...route} key={route.path} {...rest} />
+          ))}
           <Route render={() => <Page404 />} />
         </Switch>
       </div>

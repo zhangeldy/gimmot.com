@@ -1,47 +1,29 @@
 import React, { useState } from "react";
-import IconButton from "@material-ui/core/IconButton";
 import StarIcon from "@material-ui/icons/GradeOutlined";
 import FilterIcon from "@material-ui/icons/FilterList";
-import Tooltip from "@material-ui/core/Tooltip";
 import withTranslation from "../../_hoc/withTranslation";
 import { Filter } from "./AdvertsStyle";
-import InputBase from "@material-ui/core/InputBase";
+import Button from "../../_ui/Button/Button";
+import IconButton from "../../_ui/Button/IconButton";
 
 function AdvertsFilter({ t }) {
   const [isOpen, openBlock] = useState(false);
-  const [text, setText] = useState("");
 
   return (
-    <Filter className="paper my2 p1" onBlur={() => openBlock(false)}>
-      <InputBase
-        className="input-text"
-        onFocus={() => openBlock(true)}
-        onChange={ev => {
-          let value = ev.target.value.replace(String.fromCharCode(10), "");
-          if (value.length < 200) {
-            setText(value);
-          }
-        }}
-        placeholder={t("advertsFilter_addAdvert")}
-        multiline
-        rowsMax="2"
-        fullWidth
-        value={text}
-      />
+    <Filter className="paper my2 p1">
+      <Button text={t("advertsFilter_addAdvert")} size="small" />
       {!isOpen && (
         <div className="right">
-          <Tooltip title={t("advertsFilter_favorites")} placement="top">
-            <IconButton
-              style={{ padding: 5, marginLeft: 5 }}
-              children={<StarIcon fontSize="small" />}
-            />
-          </Tooltip>
-          <Tooltip title={t("advertsFilter_filter")} placement="top">
-            <IconButton
-              style={{ padding: 5, marginLeft: 5 }}
-              children={<FilterIcon fontSize="small" />}
-            />
-          </Tooltip>
+          <IconButton
+            tooltip={t("advertsFilter_favorites")}
+            style={{ padding: 5, marginLeft: 5 }}
+            icon={<StarIcon fontSize="small" />}
+          />
+          <IconButton
+            tooltip={t("advertsFilter_filter")}
+            style={{ padding: 5, marginLeft: 5 }}
+            icon={<FilterIcon fontSize="small" />}
+          />
         </div>
       )}
     </Filter>

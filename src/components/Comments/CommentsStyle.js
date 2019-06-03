@@ -39,4 +39,8 @@ export const CommentCss = styled.div`
       text-decoration: underline;
     }
   }
+
+  @media only screen and (max-width: 500px) {
+    margin: 0 10px 5px 30px;
+  }
 `;

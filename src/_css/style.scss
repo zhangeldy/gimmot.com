@@ -1,6 +1,7 @@
 * {
   box-sizing: border-box;
   font-family: -apple-system,BlinkMacSystemFont,Roboto,Open Sans,Helvetica Neue,sans-serif;
+  //font-family: "Segoe UI", "Chinese Quote", Tahoma, SansSerif, sans-serif;
 }
 
 body {
@@ -63,7 +64,7 @@ a {
 
 .imperceptible {
   user-select: none;
-  color: #939393;
+  color: #999999;
   font-size: 12.5px;
   white-space: nowrap;
 }
