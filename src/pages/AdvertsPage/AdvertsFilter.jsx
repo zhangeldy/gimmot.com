@@ -8,13 +8,19 @@ import withTranslation from "../../_hoc/withTranslation";
 import { Filter } from "./AdvertsStyle";
 import Button from "../../_ui/Button/Button";
 import IconButton from "../../_ui/Button/IconButton";
+import AdvertAdd from "./AdvertAdd";
 
 function AdvertsFilter({ t }) {
+  const [addModal, setAddModal] = useState(false);
   const [active, setActive] = useState(null);
 
   return (
     <Filter className="paper my2 p1">
-      <Button text={t("advertsFilter_addAdvert")} size="small" />
+      <Button
+        text={t("advertsFilter_addAdvert")}
+        onClick={() => setAddModal(true)}
+        size="small"
+      />
       <div className="flex">
         {!active && (
           <IconButton
@@ -38,6 +44,7 @@ function AdvertsFilter({ t }) {
           icon={active === "myAdverts" ? <AdvertActiveIcon /> : <AdvertIcon />}
         />
       </div>
+      <AdvertAdd open={addModal} onClose={() => setAddModal(false)} />
     </Filter>
   );
 }

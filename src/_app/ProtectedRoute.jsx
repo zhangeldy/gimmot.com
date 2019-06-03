@@ -43,15 +43,4 @@ export const ProtectedRoute = ({ component: Component, ...rest }) => (
   />
 );
 
-export default function RouteMap({ routes, user, permissions, loading }) {
-  return routes.map(route => (
-    <ProtectedRoute
-      exact
-      {...route}
-      key={route.path}
-      loading={loading}
-      user={user}
-      permissions={permissions}
-    />
-  ));
-}
+export default ProtectedRoute

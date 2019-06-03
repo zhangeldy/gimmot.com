@@ -47,12 +47,14 @@ function TopTabs({ match, user, children }) {
           />
         </Tabs>
       </CssBox>
-      <SwipeableViews
-        index={PATHS.topTab.indexOf(match.path)}
-        onChangeIndex={index => history.push(PATHS.topTab[index])}
-      >
-        {children}
-      </SwipeableViews>
+      {document.body.clientWidth > 500 && children}
+      {document.body.clientWidth < 500 && (
+        <SwipeableViews
+          index={PATHS.topTab.indexOf(match.path)}
+          onChangeIndex={index => history.push(PATHS.topTab[index])}
+          children={children}
+        />
+      )}
     </>
   );
 }

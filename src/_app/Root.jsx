@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { NotificationContainer } from "react-notifications";
 import routers, { PATHS } from "../_helpers/routers";
-import RouteMap, { ProtectedRoute } from "./RouteMap";
+import ProtectedRoute from "./ProtectedRoute";
 import { Route, Switch } from "react-router-dom";
 import { checkAuth, loginModule } from "../pages/LoginPage/LoginDucks";
 import { connect } from "react-redux";

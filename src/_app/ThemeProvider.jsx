@@ -13,7 +13,7 @@ const theme = createMuiTheme({
   typography: {
     useNextVariants: true,
     fontFamily: '"Segoe UI", "Chinese Quote", Tahoma, SansSerif, sans-serif',
-    fontSize: 12
+    fontSize: 13
   }
 });
 
