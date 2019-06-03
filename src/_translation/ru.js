@@ -21,6 +21,7 @@ export const RU_TRANSLATION = {
     'advertsFilter_addAdvert': 'Написать объявление',
     'advertsFilter_filter': 'Фильтр',
     'advertsFilter_favorites': 'Избранные',
+    'advertsFilter_myAdverts': 'Мои объяления',
 
     'advertItem_addFavorites': 'Добавить в избранные',
   }
