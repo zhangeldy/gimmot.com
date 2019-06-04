@@ -11,29 +11,19 @@ import TopTabs from "../components/TopTabs/TopTabs";
 import { uef } from "../utils/uef";
 
 const Root = ({ checkAuth, ...rest }) => {
-  const tabsRoutes = Object.values(routers).filter(item => item.topTabs);
-  const allRoutes = Object.values(routers).filter(item => !item.topTabs);
   useEffect(uef(checkAuth), []);
 
   return (
     <>
       <NotificationContainer />
       <Toolbar user={rest.user} />
-
       <div className="scroll-fix">
+        <Route
+          path={PATHS.topTab}
+          render={() => <TopTabs user={rest.user} />}
+        />
         <Switch>
-          <Route
-            path={PATHS.topTab}
-            render={() => (
-              <TopTabs
-                user={rest.user}
-                children={tabsRoutes.map(route => (
-                  <ProtectedRoute exact {...route} key={route.path} {...rest} />
-                ))}
-              />
-            )}
-          />
-          {allRoutes.map(route => (
+          {Object.values(routers).map(route => (
             <ProtectedRoute exact {...route} key={route.path} {...rest} />
           ))}
           <Route render={() => <Page404 />} />

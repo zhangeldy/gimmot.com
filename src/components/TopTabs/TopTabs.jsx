@@ -8,10 +8,8 @@ import { CssBox } from "./TopTabsStyle";
 import { history } from "../../_helpers/store";
 import { withRouter } from "react-router-dom";
 import { Link } from "react-router-dom";
-import SwipeableViews from "react-swipeable-views";
-import { PATHS } from "../../_helpers/routers";
 
-function TopTabs({ match, user, children }) {
+function TopTabs({ match, user }) {
   return (
     <>
       <CssBox className="content-width">
@@ -47,14 +45,6 @@ function TopTabs({ match, user, children }) {
           />
         </Tabs>
       </CssBox>
-      {document.body.clientWidth > 500 && children}
-      {document.body.clientWidth < 500 && (
-        <SwipeableViews
-          index={PATHS.topTab.indexOf(match.path)}
-          onChangeIndex={index => history.push(PATHS.topTab[index])}
-          children={children}
-        />
-      )}
     </>
   );
 }

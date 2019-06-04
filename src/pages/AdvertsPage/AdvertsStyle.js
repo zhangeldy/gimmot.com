@@ -6,5 +6,5 @@ export const Filter = styled.div`
 `;
 
 export const AddModal = styled.div`
-  padding: ${props => (props.isMobile ? "10px" : "30px")};
+  padding: 30px;
 `;

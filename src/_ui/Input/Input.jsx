@@ -1,27 +1,15 @@
 import React from "react";
 import { InputField } from "./InputStyle";
+import PropsTypes from "prop-types";
 
-function Input({ label, labelSide, value, onChange, placeholder, ...rest }) {
-  if (label) {
-    return (
-      <div className="flex items-center clearfix" {...rest}>
-        <div style={{width: 'auto'}} className={`col col-5 px1 ${labelSide && "right-align"}`}>
-          {label}
-        </div>
-        <div className="col col-7">
-          <InputField
-            placeholder={placeholder}
-            value={value}
-            onChange={onChange}
-          />
-        </div>
-      </div>
-    );
-  }
-
-  return (
-    <InputField placeholder={placeholder} value={value} onChange={onChange} />
-  );
+function Input(props) {
+  return <InputField margin="dense" {...props} />;
 }
+
+Input.propsTypes = {
+  label: PropsTypes.string,
+  value: PropsTypes.any,
+  onChange: PropsTypes.func,
+};
 
 export default Input;
