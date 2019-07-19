@@ -9,7 +9,7 @@ function UserItem({ advert, comment }) {
     return (
       <CssBox>
         <div className="user-name mr1">Жангельды, 29</div>
-        <div className="imperceptible">Астана, Гетеро, 170/55/16</div>
+        <div className="imperceptible">Астана, Гетеро, 170см - 55кг - 16см</div>
       </CssBox>
     );
   }
@@ -33,7 +33,7 @@ function UserItem({ advert, comment }) {
       </div>
       <div className="col ml2">
         <div className="user-name">Жангельды, 29</div>
-        <div className="imperceptible">Астана, Гетеро, 170/55/16</div>
+        <div className="imperceptible">Астана, Гетеро, 170-55-16</div>
       </div>
     </CssBox>
   );
