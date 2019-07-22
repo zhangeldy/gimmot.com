@@ -5,7 +5,7 @@ import AdvertIcon from "@material-ui/icons/ViewDay";
 import MessageIcon from "@material-ui/icons/Forum";
 import PeopleIcon from "@material-ui/icons/PersonPin";
 import { CssBox } from "./TopTabsStyle";
-import { history } from "../../_helpers/store";
+import { history } from "../../_helpers/history";
 import { withRouter } from "react-router-dom";
 import { Link } from "react-router-dom";
 

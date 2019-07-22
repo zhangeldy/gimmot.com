@@ -1,7 +1,8 @@
 import { LoginApi } from "../../_helpers/service";
-import { history } from "../../_helpers/store";
+import { history } from "../../_helpers/history";
 import { Notice } from "../../utils/Notice";
 import { createReducer } from "redux-starter-kit";
+import { all, put, takeEvery } from 'redux-saga/effects';
 
 /**
  * Constants
@@ -11,6 +12,7 @@ export const loginModule = "login";
 export const USER = `${loginModule}/USER`;
 export const LOGIN = `${loginModule}/LOGIN`;
 export const LOADING = `${loginModule}/LOADING`;
+export const TEST_SAGA = `${loginModule}/TEST_SAGA`;
 
 /**
  * Reducer
@@ -20,7 +22,8 @@ const initialState = {
   loadingLogin: true,
   loading: true,
   user: null,
-  permissions: []
+  permissions: [],
+  testSaga: ''
 };
 
 export default createReducer(initialState, {
@@ -30,6 +33,9 @@ export default createReducer(initialState, {
   },
   [LOADING]: (state, action) => {
     state.loading = action.loading;
+  },
+  [TEST_SAGA]: (state, action) => {
+    state.testSaga = action.testSaga;
   }
 });
 
@@ -61,4 +67,17 @@ export const login = (login, password) => async dispatch => {
     console.error(e);
     Notice.error("Не удалось авторизоваться")
   }
+};
+
+
+/**
+ * Sagas
+ */
+
+function* catchSaga() {
+  yield put({ type: TEST_SAGA, testSaga: 'TEST_SAGA_MESSAGE' });
+}
+
+export const loginSaga = function*() {
+  yield all([takeEvery(USER, catchSaga)]);
 };
