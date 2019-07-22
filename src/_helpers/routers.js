@@ -15,30 +15,27 @@ const routers = {
   advertsPage: {
     path: "/adverts",
     component: AdvertsPage,
-    withoutAuth: true,
-    topTabs: true
+    withoutAuth: true
   },
   peoplesPage: {
     path: "/peoples",
     component: PeoplesPage,
-    withoutAuth: true,
-    topTabs: true
+    withoutAuth: true
   },
   messagesPage: {
     path: "/messages",
     component: MessagesPage,
-    permission: Permissions.messagesPage.code,
-    topTabs: true
+    permission: Permissions.messagesPage
   },
   profilePage: {
     path: "/profile",
     component: ProfilePage,
-    permission: Permissions.profilePage.code
+    permission: Permissions.profilePage
   },
   settingsPage: {
     path: "/settings",
     component: SettingsPage,
-    permission: Permissions.settingsPage.code
+    permission: Permissions.settingsPage
   }
 };
 

@@ -59,6 +59,6 @@ export const LoginApi = {
         middleName: "Zhunsaliev",
         birthDate: "13.05.2019"
       },
-      permissions: Object.values(Permissions).map(item => item.code)
+      permissions: Object.values(Permissions)
     })
 };

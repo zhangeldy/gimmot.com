@@ -7,7 +7,10 @@ import Color from "../_helpers/Color";
 
 const theme = createMuiTheme({
   palette: {
-    primary: { main: Color.primary }
+    primary: {
+      main: Color.primary,
+      type: 'dark',
+    }
   },
   typography: {
     useNextVariants: true,

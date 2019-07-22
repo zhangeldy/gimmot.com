@@ -13,10 +13,10 @@ export const RU_TRANSLATION = {
     'permission_profilePage': 'Доступ к странице "Профиль"',
     'permission_settingsPage': 'Доступ к странице "Настройки"',
 
-    'toolbar_login': 'Войти',
+    'header_login': 'Войти',
 
-    'toolbarMenu_profile': 'Профиль',
-    'toolbarMenu_settings': 'Настройки',
+    'headerMenu_profile': 'Профиль',
+    'headerMenu_settings': 'Настройки',
 
     'advertsFilter_addAdvert': 'Написать объявление',
     'advertsFilter_filter': 'Фильтр',

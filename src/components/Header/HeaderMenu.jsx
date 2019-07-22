@@ -7,11 +7,11 @@ import SettingsIcon from "@material-ui/icons/Settings";
 import { Link } from "react-router-dom";
 import IconButton from "../../_ui/Button/IconButton";
 
-function ToolbarMenu({ t }) {
+function HeaderMenu({ t }) {
   const [anchor, setAnchor] = useState(null);
   const menuItems = [
-    { text: t("toolbarMenu_profile"), path: "/profile", icon: AccountIcon },
-    { text: t("toolbarMenu_settings"), path: "/settings", icon: SettingsIcon },
+    { text: t("headerMenu_profile"), path: "/profile", icon: AccountIcon },
+    { text: t("headerMenu_settings"), path: "/settings", icon: SettingsIcon },
   ];
   return (
     <div>
@@ -31,4 +31,4 @@ function ToolbarMenu({ t }) {
   );
 }
 
-export default withTranslation(ToolbarMenu);
+export default withTranslation(HeaderMenu);

@@ -6,7 +6,7 @@ import { Route, Switch } from "react-router-dom";
 import { checkAuth, loginModule } from "../pages/LoginPage/LoginDucks";
 import { connect } from "react-redux";
 import Page404 from "../pages/Page404/Page404";
-import Toolbar from "../components/Toolbar/Toolbar";
+import Header from "../components/Header/Header";
 import TopTabs from "../components/TopTabs/TopTabs";
 import { uef } from "../utils/uef";
 
@@ -16,7 +16,7 @@ const Root = ({ checkAuth, ...rest }) => {
   return (
     <>
       <NotificationContainer />
-      <Toolbar user={rest.user} />
+      <Header user={rest.user} />
       <div className="scroll-fix">
         <Route
           path={PATHS.topTab}
