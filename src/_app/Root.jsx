@@ -7,7 +7,7 @@ import { checkAuth, loginModule } from "../pages/LoginPage/LoginDucks";
 import { connect } from "react-redux";
 import Page404 from "../pages/Page404/Page404";
 import Header from "../components/Header/Header";
-import TopTabs from "../components/TopTabs/TopTabs";
+import MainTabs from "../components/MainTabs/MainTabs";
 import { uef } from "../utils/uef";
 
 const Root = ({ checkAuth, ...rest }) => {
@@ -19,8 +19,8 @@ const Root = ({ checkAuth, ...rest }) => {
       <Header user={rest.user} />
       <div className="scroll-fix">
         <Route
-          path={PATHS.topTab}
-          render={() => <TopTabs user={rest.user} />}
+          path={PATHS.mainTab}
+          render={() => <MainTabs user={rest.user} />}
         />
         <Switch>
           {Object.values(routers).map(route => (

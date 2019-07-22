@@ -4,12 +4,13 @@ import Tab from "@material-ui/core/Tab";
 import AdvertIcon from "@material-ui/icons/ViewDay";
 import MessageIcon from "@material-ui/icons/Forum";
 import PeopleIcon from "@material-ui/icons/PersonPin";
-import { CssBox } from "./TopTabsStyle";
+import { CssBox } from "./MainTabsStyle";
 import { history } from "../../_helpers/history";
 import { withRouter } from "react-router-dom";
 import { Link } from "react-router-dom";
+import routers from "../../_helpers/routers";
 
-function TopTabs({ match, user }) {
+function MainTabs({ match, user }) {
   return (
     <>
       <CssBox className="content-width">
@@ -23,22 +24,22 @@ function TopTabs({ match, user }) {
         >
           <Tab
             component={Link}
-            value="/adverts"
-            to="/adverts"
+            value={routers.advertsPage.path}
+            to={routers.advertsPage.path}
             icon={<AdvertIcon />}
             style={{ minHeight: 40 }}
           />
           <Tab
             component={Link}
-            value="/peoples"
-            to="/peoples"
+            value={routers.peoplesPage.path}
+            to={routers.peoplesPage.path}
             icon={<PeopleIcon />}
             style={{ minHeight: 40 }}
           />
           <Tab
             component={Link}
-            value="/messages"
-            to="/messages"
+            value={routers.messagesPage.path}
+            to={routers.messagesPage.path}
             icon={<MessageIcon />}
             disabled={!user}
             style={{ minHeight: 40 }}
@@ -49,4 +50,4 @@ function TopTabs({ match, user }) {
   );
 }
 
-export default withRouter(TopTabs);
+export default withRouter(MainTabs);

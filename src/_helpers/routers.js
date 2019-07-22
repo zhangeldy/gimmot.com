@@ -40,7 +40,7 @@ const routers = {
 };
 
 export const PATHS = {
-  topTab: [
+  mainTab: [
     routers.advertsPage.path,
     routers.peoplesPage.path,
     routers.messagesPage.path
