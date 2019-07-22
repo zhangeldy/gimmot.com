@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import MenuItem from "../../_ui/Menu/MenuItem";
 import Menu from "../../_ui/Menu/Menu";
-import withTranslation from "../../_hoc/withTranslation";
+import withTranslation from "../_hoc/withTranslation";
 import AccountIcon from "@material-ui/icons/AccountCircle";
 import SettingsIcon from "@material-ui/icons/Settings";
 import { Link } from "react-router-dom";

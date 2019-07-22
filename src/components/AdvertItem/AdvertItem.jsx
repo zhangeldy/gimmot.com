@@ -4,7 +4,7 @@ import UserItem from "../UserItem/UserItem";
 import Marks from "../Marks/Marks";
 import Comments from "../Comments/Comments";
 import StarIcon from "@material-ui/icons/GradeOutlined";
-import withTranslation from "../../_hoc/withTranslation";
+import withTranslation from "../_hoc/withTranslation";
 import IconButton from "../../_ui/Button/IconButton";
 
 function AdvertItem({ t }) {

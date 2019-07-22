@@ -1,5 +1,5 @@
 import React from "react";
-import withTranslation from "../../_hoc/withTranslation";
+import withTranslation from "../../components/_hoc/withTranslation";
 import { CssBox } from "./Page403Style";
 import Button from "../../_ui/Button/Button";
 import { Link } from "react-router-dom";

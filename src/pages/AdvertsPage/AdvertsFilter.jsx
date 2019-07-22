@@ -4,7 +4,7 @@ import StarActiveIcon from "@material-ui/icons/Grade";
 import FilterIcon from "@material-ui/icons/FilterList";
 import AdvertActiveIcon from "@material-ui/icons/CalendarViewDay";
 import AdvertIcon from "@material-ui/icons/CalendarViewDayOutlined";
-import withTranslation from "../../_hoc/withTranslation";
+import withTranslation from "../../components/_hoc/withTranslation";
 import { Filter } from "./AdvertsStyle";
 import Button from "../../_ui/Button/Button";
 import IconButton from "../../_ui/Button/IconButton";

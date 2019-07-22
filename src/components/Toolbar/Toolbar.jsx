@@ -6,7 +6,7 @@ import { ReactComponent as LogoIcon } from "../../_media/logo.svg";
 import ToolbarMenu from "./ToolbarMenu";
 import InheritButton from "../../_ui/Button/InheritButton";
 import routers from "../../_helpers/routers";
-import withTranslation from "../../_hoc/withTranslation";
+import withTranslation from "../_hoc/withTranslation";
 import { history } from "../../_helpers/history";
 import IFAuth from "../IFAuth";
 
