@@ -1,9 +1,9 @@
 import React from "react";
-import { Field } from "formik";
+import { Field as FieldFormik } from "formik";
 import PropTypes from "prop-types";
 import { errorMsg } from "../../utils/errorMsg";
 
-export default class FieldBox extends React.Component {
+export default class Field extends React.Component {
   onChange = (value, object) => {
     object.form.setFieldValue(this.props.name, value);
   };
@@ -16,8 +16,10 @@ export default class FieldBox extends React.Component {
   };
 
   render() {
+    const { name, children } = this.props;
+
     return (
-      <Field
+      <FieldFormik
         name={name}
         render={object => {
           return (
@@ -26,12 +28,8 @@ export default class FieldBox extends React.Component {
                 value: object.field.value,
                 error: errorMsg(name, object.form),
                 params: object,
-                onChange: value => {
-                  this.onChange(value, object);
-                },
-                onBlur: () => {
-                  setTimeout(() => this.onBlur(object), 200);
-                }
+                onChange: value => this.onChange(value, object),
+                onBlur: () => setTimeout(() => this.onBlur(object), 200)
               })}
             </>
           );
@@ -41,6 +39,6 @@ export default class FieldBox extends React.Component {
   }
 }
 
-FieldBox.propTypes = {
+Field.propTypes = {
   name: PropTypes.string.isRequired
 };
