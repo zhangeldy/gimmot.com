@@ -28,6 +28,7 @@ function MainTabs({ match, user }) {
             to={routers.advertsPage.path}
             icon={<AdvertIcon />}
             style={{ minHeight: 40 }}
+            disableFocusRipple
           />
           <Tab
             component={Link}
@@ -35,6 +36,7 @@ function MainTabs({ match, user }) {
             to={routers.peoplesPage.path}
             icon={<PeopleIcon />}
             style={{ minHeight: 40 }}
+            disableFocusRipple
           />
           <Tab
             component={Link}
@@ -43,6 +45,7 @@ function MainTabs({ match, user }) {
             icon={<MessageIcon />}
             disabled={!user}
             style={{ minHeight: 40 }}
+            disableFocusRipple
           />
         </Tabs>
       </CssBox>
