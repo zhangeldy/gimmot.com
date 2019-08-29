@@ -1,13 +1,16 @@
-import React from "react";
-import { loginModule } from "../pages/LoginPage/LoginDucks";
-import { connect } from "react-redux";
+import React from 'react';
+import { loginModule } from '../pages/LoginPage/LoginDucks';
+import { connect } from 'react-redux';
 
 /**
+ * @param ps - permissions
+ * @param userPermissions
+ * @param children
  * @return {null}
  */
-function Access({ permissions, userPermissions }) {
-  if (permissions instanceof Array) {
-    if (userPermissions.some(item => permissions.includes(item))) {
+function Access({ ps, userPermissions, children }) {
+  if (ps instanceof Array) {
+    if (userPermissions.some(item => ps.includes(item))) {
       return <>{children}</>;
     }
   }
