@@ -1,15 +1,15 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Field from "../Form/Field";
-import { InputField } from "./InputStyle";
+import TextField from "@material-ui/core/TextField";
 
 const Input = ({ withoutForm, name, onChange, ...restProps }) => {
   return withoutForm ? (
-    <InputField name={name} onChange={onChange} {...restProps} />
+    <TextField name={name} onChange={onChange} {...restProps} />
   ) : (
     <Field name={name}>
       {({ onChange, ...fieldProps }) => (
-        <InputField
+        <TextField
           name={name}
           onChange={event => onChange(event.target.value)}
           {...restProps}

@@ -20,7 +20,7 @@ function AdvertAdd({ open, onClose, fullScreen }) {
             <Input name="params" label="Рост/Вес/Размер" />
           </div>
           <div>
-            <Input name="text" label="Текст" />
+            <Input name="text" label="Текст" multiLine />
           </div>
         </Form>
       </AddModal>

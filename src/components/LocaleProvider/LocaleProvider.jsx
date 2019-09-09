@@ -1,18 +1,13 @@
 import React from "react";
 import { connect } from "react-redux";
 
-import { IntlProvider, addLocaleData } from "react-intl";
-import ru from "react-intl/locale-data/ru";
-import kk from "react-intl/locale-data/kk";
-import en from "react-intl/locale-data/en";
+import { IntlProvider } from "react-intl";
 
 import moment from "moment";
 import "moment/locale/ru";
 import "moment/locale/kk";
 
 import { changeLocale, localeModule } from "./LocaleDucks";
-
-addLocaleData([...ru, ...kk, ...en]);
 
 class LocaleProvider extends React.Component {
   componentDidMount() {
