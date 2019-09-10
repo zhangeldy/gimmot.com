@@ -1,6 +1,6 @@
 import axios from "axios";
 import { apiImitation } from "../utils/apiImitation";
-import { Permissions } from "./Permissions";
+import permissions from "./permissions";
 
 export const Api = axios.create({
   baseURL: "https://example.com/api/",
@@ -59,6 +59,6 @@ export const LoginApi = {
         middleName: "Zhunsaliev",
         birthDate: "13.05.2019"
       },
-      permissions: Object.values(Permissions)
+      permissions: Object.values(permissions)
     })
 };

@@ -1,5 +1,5 @@
 import React from "react";
-import Toolbar from "@material-ui/core/Toolbar";
+import { AppBar, Toolbar, Typography } from '@material-ui/core';
 import { Link } from "react-router-dom";
 import { CssBox } from "./HeaderStyle";
 import { ReactComponent as LogoIcon } from "../../_media/logo.svg";
@@ -13,8 +13,9 @@ import paths from "../../_helpers/paths";
 function Header({ user, t }) {
   return (
     <CssBox>
-      <div className="scroll-fix">
-        <Toolbar variant="dense" className="content-width">
+      <AppBar position="fixed" elevation={0} color="primary">
+        <div className="scroll-fix">
+        <Toolbar className="content-width">
           <Link className="logo" to={paths.advertsPage}>
             <LogoIcon/>
           </Link>
@@ -27,6 +28,7 @@ function Header({ user, t }) {
           )}
         </Toolbar>
       </div>
+      </AppBar>
     </CssBox>
   );
 }

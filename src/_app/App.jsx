@@ -3,7 +3,7 @@ import { Provider } from "react-redux";
 import { store } from "../_helpers/store";
 import { history } from "../_helpers/history";
 import LocaleProvider from "../components/LocaleProvider/LocaleProvider";
-import ThemeProvider from "./ThemeProvider";
+import ThemeProvider from "../components/ThemeProvider/ThemeProvider";
 import Root from "./Root";
 import { Router } from 'react-router-dom';
 

@@ -1,8 +1,5 @@
 import React from 'react';
 import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
-import '../_css/style.scss';
-import '../_css/basscss.min.css';
-import 'react-notifications/lib/notifications.css';
 import styled from 'styled-components';
 
 const theme = createMuiTheme({
@@ -18,7 +15,7 @@ const theme = createMuiTheme({
     fontSize: 13,
   },
   props: {
-    // MuiButton: { size: 'small' },
+    MuiButton: { size: 'small' },
     MuiFilledInput: { margin: 'dense' },
     MuiFormControl: { margin: 'dense' },
     MuiFormHelperText: { style: { margin: 0 } },
@@ -36,7 +33,7 @@ const theme = createMuiTheme({
       fullWidth: true,
       autoComplete: 'off',
     },
-    // MuiToolbar: { variant: 'dense' },
+    MuiToolbar: { variant: 'dense' },
   },
   overrides: {
     MuiIconButton: {
@@ -58,6 +55,13 @@ const Wrapper = styled.main`
 
   .textSecondary {
     color: ${theme.palette.text.secondary};
+  }
+
+  .imperceptible {
+    user-select: none;
+    color: #999999;
+    font-size: 12.5px;
+    white-space: nowrap;
   }
 `;
 
