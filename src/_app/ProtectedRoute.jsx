@@ -2,18 +2,14 @@ import React from "react";
 import { Route, Redirect } from "react-router-dom";
 import PageLoader from "../components/PageLoader/PageLoader";
 import Page403 from "../pages/Page403/Page403";
-import routers from "../_helpers/routers";
+import paths from "../_helpers/paths";
 
 export const ProtectedRoute = ({ component: Component, ...rest }) => (
   <Route
     {...rest}
     render={routeProps => {
-      if (rest.withoutAuth && rest.path !== routers.loginPage.path) {
-        return (
-          <div className="content-width">
-            <Component {...routeProps} />
-          </div>
-        );
+      if (rest.withoutAuth && rest.path !== paths.loginPage) {
+        return <Component {...routeProps} />;
       }
 
       if (rest.loading) {
@@ -22,23 +18,23 @@ export const ProtectedRoute = ({ component: Component, ...rest }) => (
 
       // перенаправляем если не авторизован
       if (!rest.withoutAuth && rest.user === null) {
-        return <Redirect to={routers.loginPage.path} />;
+        return <Redirect to={paths.loginPage} />;
       }
 
       // перенаправляем если авторизован
-      if (rest.user && rest.path === routers.loginPage.path) {
-        return <Redirect to={routers.advertsPage.path} />;
+      if (rest.user && rest.path === paths.loginPage) {
+        return <Redirect to={paths.advertsPage} />;
       }
 
-      if (rest.permission && !rest.permissions.includes(rest.permission)) {
+      // проверяем доступ к странице
+      if (
+        rest.permissions &&
+        !rest.userPermissions.some(item => rest.permissions.includes(item))
+      ) {
         return <Page403 />;
       }
 
-      return (
-        <div className="content-width">
-          <Component {...routeProps} />
-        </div>
-      );
+      return <Component {...routeProps} />;
     }}
   />
 );

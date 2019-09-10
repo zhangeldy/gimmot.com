@@ -8,7 +8,7 @@ import { CssBox } from "./MainTabsStyle";
 import { history } from "../../_helpers/history";
 import { withRouter } from "react-router-dom";
 import { Link } from "react-router-dom";
-import routers from "../../_helpers/routers";
+import paths from "../../_helpers/paths";
 
 function MainTabs({ match, user }) {
   return (
@@ -24,24 +24,24 @@ function MainTabs({ match, user }) {
         >
           <Tab
             component={Link}
-            value={routers.advertsPage.path}
-            to={routers.advertsPage.path}
+            value={paths.advertsPage}
+            to={paths.advertsPage}
             icon={<AdvertIcon />}
             style={{ minHeight: 40 }}
             disableFocusRipple
           />
           <Tab
             component={Link}
-            value={routers.peoplesPage.path}
-            to={routers.peoplesPage.path}
+            value={paths.peoplesPage}
+            to={paths.peoplesPage}
             icon={<PeopleIcon />}
             style={{ minHeight: 40 }}
             disableFocusRipple
           />
           <Tab
             component={Link}
-            value={routers.messagesPage.path}
-            to={routers.messagesPage.path}
+            value={paths.messagesPage}
+            to={paths.messagesPage}
             icon={<MessageIcon />}
             disabled={!user}
             style={{ minHeight: 40 }}

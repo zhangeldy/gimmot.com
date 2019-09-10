@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import Color from "../../_helpers/Color";
 
 export const CssBox = styled.div`
   #cube-loader {
@@ -37,7 +36,7 @@ export const CssBox = styled.div`
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: ${Color.primary};
+        background-color: blueviolet;
         animation: cube-loader 2.76s infinite linear both;
         transform-origin: 100% 100%;
       }

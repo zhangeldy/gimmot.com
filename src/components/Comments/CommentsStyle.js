@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import Color from "../../_helpers/Color";
 
 export const CssBox = styled.div`
   .add-comment {
@@ -33,7 +32,7 @@ export const CommentCss = styled.div`
   }
 
   .reply {
-    color: ${Color.primary};
+    color: blueviolet;
     cursor: pointer;
     :hover {
       text-decoration: underline;

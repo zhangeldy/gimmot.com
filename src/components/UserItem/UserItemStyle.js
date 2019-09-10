@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import Color from "../../_helpers/Color";
 
 export const CssBox = styled.div`
   .user-item {
@@ -16,7 +15,7 @@ export const CssBox = styled.div`
   }
 
   .user-name {
-    color: ${Color.primary};
+    color: blueviolet;
     cursor: pointer;
     font-size: 13px;
     font-weight: 600;
