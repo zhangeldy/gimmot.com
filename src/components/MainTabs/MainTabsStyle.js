@@ -1,11 +1,11 @@
 import styled from "styled-components";
+import { styles } from "../ThemeProvider/Styles";
 
-export const CssBox = styled.div`
-  border-bottom: 1px solid #d7d8db;
+export const Wrapper = styled.div`
+  border-bottom: 1px solid ${styles.borderColor};
+  outline: 1px solid ${styles.bgColor} ;
+  background-color: ${styles.bgColor} !important;
   position: sticky;
   top: 48px;
-  background-color: rgb(240, 242, 245) !important;
   z-index: 2;
-  max-width: 655px;
-  width: 91%;
 `;

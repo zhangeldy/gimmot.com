@@ -8,7 +8,7 @@ function UserItem({ advert, comment }) {
   if (advert) {
     return (
       <CssBox>
-        <div className="user-name mr1">Жангельды, 29</div>
+        <div className="colorPrimary user-name mr1">Жангельды, 29</div>
         <div className="imperceptible">Астана, Гетеро, 170см - 55кг - 16см</div>
       </CssBox>
     );
@@ -17,7 +17,7 @@ function UserItem({ advert, comment }) {
   if (comment) {
     return (
       <CssBox className="flex flex-wrap items-center">
-        <div className="col user-name mr1">Жангельды, 29</div>
+        <div className="col colorPrimary user-name mr1">Жангельды, 29</div>
         <div className="imperceptible">{comment}</div>
       </CssBox>
     );
@@ -32,7 +32,7 @@ function UserItem({ advert, comment }) {
         </div>
       </div>
       <div className="col ml2">
-        <div className="user-name">Жангельды, 29</div>
+        <div className="colorPrimary user-name">Жангельды, 29</div>
         <div className="imperceptible">Астана, Гетеро, 170-55-16</div>
       </div>
     </CssBox>

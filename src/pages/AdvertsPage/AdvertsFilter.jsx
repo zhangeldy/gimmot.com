@@ -5,17 +5,17 @@ import FilterIcon from "@material-ui/icons/FilterList";
 import AdvertActiveIcon from "@material-ui/icons/CalendarViewDay";
 import AdvertIcon from "@material-ui/icons/CalendarViewDayOutlined";
 import withTranslation from "../../components/_hoc/withTranslation";
-import { Filter } from "./AdvertsStyle";
 import Button from "../../_ui/Button/Button";
 import IconButton from "../../_ui/Button/IconButton";
 import AdvertAdd from "./AdvertAdd";
+import Paper from '@material-ui/core/Paper'
 
 function AdvertsFilter({ t }) {
   const [addModal, setAddModal] = useState(false);
   const [active, setActive] = useState(null);
 
   return (
-    <Filter className="paper my2 p1">
+    <Paper className="flex justify-between my2 p1">
       <Button
         text={t("advertsFilter_addAdvert")}
         onClick={() => setAddModal(true)}
@@ -45,7 +45,7 @@ function AdvertsFilter({ t }) {
         />
       </div>
       <AdvertAdd open={addModal} onClose={() => setAddModal(false)} />
-    </Filter>
+    </Paper>
   );
 }
 

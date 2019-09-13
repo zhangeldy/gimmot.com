@@ -1,11 +1,7 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-export const CssBox = styled.div`
-  position: sticky;
-  top: 0;
-  z-index: 2;
-  margin-bottom: 20px;
-  color: white;
+export const Wrapper = styled.div`
+  height: 48px;
   .logo {
     flex-grow: 1;
     svg {

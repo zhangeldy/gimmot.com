@@ -1,5 +1,5 @@
 import React from "react";
-import AdvertItem from "../../components/AdvertItem/AdvertItem";
+import AdvertItem from "./AdvertItem/AdvertItem";
 import AdvertsFilter from "./AdvertsFilter";
 
 

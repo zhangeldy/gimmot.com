@@ -1,11 +1,11 @@
 import React from "react";
-import { CssBox } from "../Comments/CommentsStyle";
+import { CssBox } from "./CommentsStyle";
 import Comment from "./Comment";
 
 function Comments(props) {
   return (
     <CssBox>
-      <div className="comments">
+      <div>
         <Comment />
         <Comment />
         <Comment />
@@ -13,7 +13,7 @@ function Comments(props) {
         <Comment />
       </div>
       <div className="add-comment">
-        <input placeholder="Написать комментарий..." />
+        <input className="textPrimary" placeholder="Написать комментарий..." />
       </div>
     </CssBox>
   );

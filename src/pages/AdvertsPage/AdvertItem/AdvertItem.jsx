@@ -1,16 +1,16 @@
 import React from "react";
-import { CssBox } from "./AdvertItemStyle";
-import UserItem from "../UserItem/UserItem";
+import UserItem from "../../../components/UserItem/UserItem";
 import Marks from "../Marks/Marks";
 import Comments from "../Comments/Comments";
 import StarIcon from "@material-ui/icons/GradeOutlined";
-import withTranslation from "../_hoc/withTranslation";
-import IconButton from "../../_ui/Button/IconButton";
+import withTranslation from "../../../components/_hoc/withTranslation";
+import IconButton from "../../../_ui/Button/IconButton";
+import Paper from '@material-ui/core/Paper'
 
 function AdvertItem({ t }) {
   return (
-    <CssBox className="paper my2">
-      <div className="ai">
+    <Paper className="mt2">
+      <div className="p2">
         <IconButton
           style={{ padding: 0, marginLeft: 10, marginTop: -5 }}
           tooltip={t("advertItem_addFavorites")}
@@ -18,14 +18,14 @@ function AdvertItem({ t }) {
         />
         <div className="right imperceptible">18 мая в 18:13</div>
         <UserItem advert />
-        <div className="text">
+        <div className="py1" style={{ fontSize: 15 }}>
           text text text text text text text text text text text text text text
           text text text text text text text text text text text text text text
         </div>
         <Marks />
       </div>
       <Comments />
-    </CssBox>
+    </Paper>
   );
 }
 

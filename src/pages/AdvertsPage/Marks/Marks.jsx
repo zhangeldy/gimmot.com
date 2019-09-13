@@ -1,14 +1,14 @@
 import React from "react";
-import { CssBox } from "./MarksStyle";
+import { Wrapper } from "./MarksStyle";
 
 
-function Marks(props) {
+function Marks() {
   return (
-    <CssBox>
+    <Wrapper className="italic lowercase fs12">
       <span className="mark-item">Хочу сейчас</span>
       <span className="mark-item">С местом</span>
       <span className="mark-item">На машине</span>
-    </CssBox>
+    </Wrapper>
   );
 }
 

@@ -15,7 +15,6 @@ export const CssBox = styled.div`
   }
 
   .user-name {
-    color: blueviolet;
     cursor: pointer;
     font-size: 13px;
     font-weight: 600;

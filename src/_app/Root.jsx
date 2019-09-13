@@ -18,20 +18,23 @@ const Root = ({ checkAuth, ...rest }) => {
     <>
       <NotificationContainer />
       <Header user={rest.user} />
+
       <div className="scroll-fix">
-        <Route
-          path={[paths.advertsPage, paths.peoplesPage, paths.messagesPage]}
-          render={() => <MainTabs user={rest.user} />}
-        />
-        <Switch>
-          <ProtectedRoute exact {...rest} {...routerProps.loginPage}/>
-          <ProtectedRoute exact {...rest} {...routerProps.advertsPage}/>
-          <ProtectedRoute exact {...rest} {...routerProps.peoplesPage}/>
-          <ProtectedRoute exact {...rest} {...routerProps.messagesPage}/>
-          <ProtectedRoute exact {...rest} {...routerProps.profilePage}/>
-          <ProtectedRoute exact {...rest} {...routerProps.settingsPage}/>
-          <Route render={() => <Page404 />} />
-        </Switch>
+        <div className="content">
+          <Route
+            path={[paths.advertsPage, paths.peoplesPage, paths.messagesPage]}
+            render={() => <MainTabs user={rest.user} />}
+          />
+          <Switch>
+            <ProtectedRoute exact {...rest} {...routerProps.loginPage}/>
+            <ProtectedRoute exact {...rest} {...routerProps.advertsPage}/>
+            <ProtectedRoute exact {...rest} {...routerProps.peoplesPage}/>
+            <ProtectedRoute exact {...rest} {...routerProps.messagesPage}/>
+            <ProtectedRoute exact {...rest} {...routerProps.profilePage}/>
+            <ProtectedRoute exact {...rest} {...routerProps.settingsPage}/>
+            <Route render={() => <Page404 />} />
+          </Switch>
+        </div>
       </div>
     </>
   );

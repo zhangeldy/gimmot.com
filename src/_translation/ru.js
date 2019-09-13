@@ -17,6 +17,7 @@ export const RU_TRANSLATION = {
 
     'headerMenu_profile': 'Профиль',
     'headerMenu_settings': 'Настройки',
+    'headerMenu_logout': 'Выйти',
 
     'advertsFilter_addAdvert': 'Написать объявление',
     'advertsFilter_filter': 'Фильтр',

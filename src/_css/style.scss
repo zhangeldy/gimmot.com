@@ -15,32 +15,25 @@ body {
 
 a {
   text-decoration: none;
+  color: inherit;
 }
 
-.paper {
-  box-shadow: 0 1px 0 0 #d7d8db, 0 0 0 1px #e3e4e8;
-  background-color: #ffffff;
-  border-radius: 4px;
+.imperceptible {
+  user-select: none;
+  color: #999999;
+  font-size: 12.5px;
+  white-space: nowrap;
 }
 
-.content-width {
-  max-width: 650px;
-  width: 90%;
-  margin: auto;
-  padding: 0 !important;
+.lowercase {
+  text-transform: lowercase;
 }
 
-.scroll-fix {
-  width: calc(100vw - 20px);
+.fs12 {
+  font-size: 12px;
 }
 
-@media only screen and (max-width: 500px) {
-  .scroll-fix {
-    width: 100vw;
-  }
-}
-
-/* Notification */
+/* Notification begin */
 .notification-container {
   width: 350px !important;
   color: #36a2eb !important;
@@ -63,3 +56,4 @@ a {
   left: 25px !important;
   font-size: 19px !important;
 }
+/* Notification end */
