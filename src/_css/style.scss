@@ -1,6 +1,6 @@
 * {
   box-sizing: border-box;
-  font-family: -apple-system, BlinkMacSystemFont, Roboto, Open Sans,
+  font-family: -apple-system,BlinkMacSystemFont,Roboto,Open Sans,Helvetica Neue,Noto Sans Armenian,Noto Sans Bengali,Noto Sans Cherokee,Noto Sans Devanagari,Noto Sans Ethiopic,Noto Sans Georgian,Noto Sans Hebrew,Noto Sans Kannada,Noto Sans Khmer,Noto Sans Lao,Noto Sans Osmanya,Noto Sans Tamil,Noto Sans Telugu,Noto Sans Thai,sans-serif,
     Helvetica Neue, sans-serif;
   //font-family: "Segoe UI", "Chinese Quote", Tahoma, SansSerif, sans-serif;
 }
@@ -16,6 +16,7 @@ body {
 a {
   text-decoration: none;
   color: inherit;
+  cursor: pointer;
 }
 
 .imperceptible {
@@ -29,8 +30,16 @@ a {
   text-transform: lowercase;
 }
 
-.fs12 {
+.fs-small {
   font-size: 12px;
+}
+
+.fs-medium {
+  font-size: 15px;
+}
+
+.fs-large {
+  font-size: 16px;
 }
 
 /* Notification begin */

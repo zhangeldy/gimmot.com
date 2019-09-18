@@ -10,7 +10,7 @@ import IconButton from "../../_ui/Button/IconButton";
 import AdvertAdd from "./AdvertAdd";
 import Paper from '@material-ui/core/Paper'
 
-function AdvertsFilter({ t }) {
+function AdvertsHeader({ t }) {
   const [addModal, setAddModal] = useState(false);
   const [active, setActive] = useState(null);
 
@@ -49,4 +49,4 @@ function AdvertsFilter({ t }) {
   );
 }
 
-export default withTranslation(AdvertsFilter);
+export default withTranslation(AdvertsHeader);

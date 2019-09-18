@@ -39,6 +39,15 @@ export const Wrapper = styled.main`
     padding: 0 !important;
   }
 
+  .user-name {
+    cursor: pointer;
+    font-weight: 600;
+    line-height: 20px;
+    :hover {
+      text-decoration: underline;
+    }
+  }
+
   .scroll-fix {
     width: calc(100vw - 20px);
   }

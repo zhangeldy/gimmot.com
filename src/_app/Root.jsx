@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { NotificationContainer } from "react-notifications";
-import routerProps, { PATHS } from "../_helpers/routerProps";
+import routerProps from "../_helpers/routerProps";
 import ProtectedRoute from "./ProtectedRoute";
 import { Route, Switch } from "react-router-dom";
 import { checkAuth, loginModule } from "../pages/LoginPage/LoginDucks";

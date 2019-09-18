@@ -25,5 +25,6 @@ export const RU_TRANSLATION = {
     'advertsFilter_myAdverts': 'Мои объяления',
 
     'advertItem_addFavorites': 'Добавить в избранные',
+    'advertAdd_addBtn': 'Опубликовать',
   }
 };
