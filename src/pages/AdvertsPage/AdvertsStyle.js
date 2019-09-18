@@ -43,7 +43,6 @@ export const Comments = styled.div`
       border: none;
       border-bottom-left-radius: ${styles.borderRadius};
       border-bottom-right-radius: ${styles.borderRadius};
-      color: white;
       background-color: transparent;
       width: 100%;
       height: 40px;

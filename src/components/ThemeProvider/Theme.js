@@ -1,7 +1,7 @@
 import { createMuiTheme } from '@material-ui/core/styles';
 
-const themeType = 'light';
-// const themeType = 'dark';
+// const themeType = 'light';
+const themeType = 'dark';
 
 export const theme = createMuiTheme({
   dark: themeType === 'dark',
