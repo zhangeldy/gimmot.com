@@ -7,7 +7,7 @@ export const theme = createMuiTheme({
   dark: themeType === 'dark',
   palette: {
     type: themeType,
-    primary: { main: '#4c8ca9' },
+    primary: { main: '#3b85a9' },
     secondary: { main: '#e2726f' },
     background: {
       paper: themeType === 'dark' ? '#333336' : '#fff',
