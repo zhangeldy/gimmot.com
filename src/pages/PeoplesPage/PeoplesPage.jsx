@@ -1,16 +1,15 @@
-import React from "react";
-import UserItem from "../../components/UserItem/UserItem";
-
+import React from 'react';
+import PeoplesUser from './PeoplesUser';
 
 function PeoplesPage(props) {
   return (
     <div className="paper mt2 p2">
-      <UserItem/>
-      <UserItem/>
-      <UserItem/>
-      <UserItem/>
-      <UserItem/>
-      <UserItem/>
+      <PeoplesUser />
+      <PeoplesUser />
+      <PeoplesUser />
+      <PeoplesUser />
+      <PeoplesUser />
+      <PeoplesUser />
     </div>
   );
 }

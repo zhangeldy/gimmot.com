@@ -20,7 +20,7 @@ const Root = ({ checkAuth, ...rest }) => {
       <Header user={rest.user} />
 
       <div className="scroll-fix">
-        <div className="content">
+        <div className="content pb2">
           <Route
             path={[paths.advertsPage, paths.peoplesPage, paths.messagesPage]}
             render={() => <MainTabs user={rest.user} />}

@@ -50,8 +50,8 @@ function AdvertsPage({ t }) {
   return (
     <div>
       <AdvertsHeader />
-      {advertsData.map(item => (
-        <Paper className="mt2">
+      {advertsData.map((item, index) => (
+        <Paper key={index} className="mt2">
           <div className="p2">
             <IconButton
               style={{ padding: 0, marginLeft: 10, marginTop: -5 }}
@@ -59,14 +59,14 @@ function AdvertsPage({ t }) {
               icon={<StarIcon fontSize="small" />}
             />
             <div className="right imperceptible">{item.time}</div>
-            <a className="colorPrimary user-name mr1">{item.userName}</a>
+            <div className="colorPrimary user-name mr1">{item.userName}</div>
             <div className="imperceptible">{item.params}</div>
             <div className="py1 fs-medium">{item.text}</div>
 
             {item.marks && (
               <Marks className="italic lowercase fs-small">
                 {item.marks.map(mark => (
-                  <span className="mark-item">{mark}</span>
+                  <span key={mark} className="mark-item">{mark}</span>
                 ))}
               </Marks>
             )}

@@ -36,7 +36,6 @@ export const Wrapper = styled.main`
     max-width: 650px;
     width: 90%;
     margin: auto;
-    padding: 0 !important;
   }
 
   .user-name {

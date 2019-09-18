@@ -1,12 +1,12 @@
-import React from "react";
-import { CssBox } from "./UserItemStyle";
+import React from 'react';
+import { UserItem } from './PeoplesStyle';
 
 const imgLink =
-  "https://instagram.fhrk1-1.fna.fbcdn.net/vp/c85b746a2f0be3f5007ea21ca05da4b4/5D5E57CC/t51.2885-19/s150x150/16124354_1343066049065271_4431176462896201728_n.jpg?_nc_ht=instagram.fhrk1-1.fna.fbcdn.net";
+  'https://store.playstation.com/store/api/chihiro/00_09_000/container/GB/en/999/EP0149-CUSA09988_00-AV00000000000001/1553560094000/image?w=240&h=240&bg_color=000000&opacity=100&_version=00_09_000';
 
-function UserItem() {
+function PeoplesUser() {
   return (
-    <CssBox className="clearfix">
+    <UserItem className="clearfix">
       <div className="col">
         <div className="user-item">
           <img src={imgLink} alt="user item" />
@@ -17,8 +17,8 @@ function UserItem() {
         <div className="colorPrimary user-name">Жангельды, 29</div>
         <div className="imperceptible">Астана, Гетеро, 170-55-16</div>
       </div>
-    </CssBox>
+    </UserItem>
   );
 }
 
-export default UserItem;
+export default PeoplesUser;

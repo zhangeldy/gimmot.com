@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const CssBox = styled.div`
+export const UserItem = styled.div`
   .user-item {
     user-select: none;
     width: 35px;
