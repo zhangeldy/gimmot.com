@@ -14,7 +14,7 @@ function Header({ user, t }) {
     <Wrapper>
       <AppBar position="fixed">
         <div className="scroll-fix">
-          <Toolbar className="content">
+          <Toolbar className="content" style={{ padding: 0}}>
             <Link className="logo" to={paths.advertsPage}>
               <LogoIcon />
             </Link>
