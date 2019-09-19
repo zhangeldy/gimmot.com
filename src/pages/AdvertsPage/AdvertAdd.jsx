@@ -11,8 +11,8 @@ function AdvertAdd({ open, onClose, fullScreen, t }) {
   return (
     <Dialog open={open} onClose={onClose} fullScreen={fullScreen}>
       <div className="p3">
+        <div className="fs-large mb2">Новое объявление</div>
         <Form onSubmit={console.log}>
-          <div className="fs-large">Новое объявление</div>
           <div className="flex">
             <Input name="name" label="Псевдоним" style={{ marginRight: 10 }} />
             <Input name="age" label="Возраст" />
@@ -23,7 +23,7 @@ function AdvertAdd({ open, onClose, fullScreen, t }) {
             <Input name="params" label="Рост/Вес/Размер" />
           </div>
           <div>
-            <Input name="text" label="Текст" multiline rows={2} />
+            <Input name="text" label="Текст" multiline rows={2} rowsMax={2} />
           </div>
           <div className="right-align mt1">
             <Button text={t('advertAdd_addBtn')} />

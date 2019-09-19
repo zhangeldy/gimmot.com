@@ -6,16 +6,16 @@ const imgLink =
 
 function PeoplesUser() {
   return (
-    <UserItem className="clearfix">
-      <div className="col">
-        <div className="user-item">
-          <img src={imgLink} alt="user item" />
-          <div className="is-online" />
-        </div>
+    <UserItem className="flex">
+      <div className="user-avatar">
+        <img src={imgLink} alt="user item" />
+        <div className="is-online" />
       </div>
-      <div className="col ml2">
-        <div className="colorPrimary user-name">Жангельды, 29</div>
-        <div className="imperceptible">Астана, Гетеро, 170-55-16</div>
+      <div className="ml2">
+        <div className="user-name">Жангельды, 29</div>
+        <div className="imperceptible">Астана, Гетеро, 170см - 55кг - 16см</div>
+        <div className="imperceptible">от вас 1,4 км</div>
+        <div className="mt1">Написать сообщение</div>
       </div>
     </UserItem>
   );

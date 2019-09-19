@@ -1,10 +1,21 @@
-import styled from "styled-components";
+import styled from 'styled-components';
+import Paper from '@material-ui/core/Paper';
+import { styles } from '../../components/ThemeProvider/Styles';
+
+export const Wrapper = styled(Paper)`
+  padding: 20px;
+`;
 
 export const UserItem = styled.div`
-  .user-item {
+  padding: 15px 0;
+  :first-child {
+    padding-top: 0;
+  }
+
+  .user-avatar {
     user-select: none;
-    width: 35px;
-    height: 35px;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
     overflow: hidden;
     cursor: pointer;
@@ -12,5 +23,10 @@ export const UserItem = styled.div`
       width: 100%;
       height: 100%;
     }
+  }
+  border-bottom: 1px solid ${styles.borderColor};
+  :last-child {
+    border-bottom: none;
+    padding-bottom: 0;
   }
 `;

@@ -1,16 +1,17 @@
 import React from 'react';
 import PeoplesUser from './PeoplesUser';
+import { Wrapper } from './PeoplesStyle'
 
 function PeoplesPage(props) {
   return (
-    <div className="paper mt2 p2">
+    <Wrapper className="mt2">
       <PeoplesUser />
       <PeoplesUser />
       <PeoplesUser />
       <PeoplesUser />
       <PeoplesUser />
       <PeoplesUser />
-    </div>
+    </Wrapper>
   );
 }
 
