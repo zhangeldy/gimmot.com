@@ -1,7 +1,7 @@
 import { createMuiTheme } from '@material-ui/core/styles';
 
-const themeType = 'light';
-// const themeType = 'dark';
+// const themeType = 'light';
+const themeType = 'dark';
 
 export const theme = createMuiTheme({
   dark: themeType === 'dark',
@@ -49,7 +49,6 @@ export const theme = createMuiTheme({
     },
     MuiToolbar: { variant: 'dense' },
     MuiPaper: {
-      elevation: 0,
       style: {
         boxShadow:
           themeType === 'dark'

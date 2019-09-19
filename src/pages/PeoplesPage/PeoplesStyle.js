@@ -27,6 +27,7 @@ export const Header = styled(Paper)`
       height: 30px;
       padding-left: 10px;
       flex: 1;
+      background-color: transparent;
       :focus {
         outline: none;
       }

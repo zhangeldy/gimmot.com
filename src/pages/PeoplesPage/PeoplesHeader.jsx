@@ -11,7 +11,7 @@ function PeoplesHeader({ t }) {
     <Header>
       <div className="search">
         <SearchIcon style={{ color: styles.textSecondary }}/>
-        <input placeholder="Поиск" />
+        <input className="textPrimary" placeholder="Поиск" />
       </div>
       <IconButton
         tooltip={t('advertsFilter_filter')}
