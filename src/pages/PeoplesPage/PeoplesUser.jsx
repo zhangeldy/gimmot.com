@@ -14,7 +14,7 @@ function PeoplesUser() {
       <div className="ml2">
         <div className="user-name">Жангельды, 29</div>
         <div className="imperceptible">Астана, Гетеро, 170см - 55кг - 16см</div>
-        <div className="imperceptible">от вас 1,4 км</div>
+        <div className="imperceptible">1,4 км от вас </div>
         <div className="mt1">Написать сообщение</div>
       </div>
     </UserItem>
