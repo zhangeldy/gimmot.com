@@ -1,16 +1,20 @@
 import React from 'react';
 import PeoplesUser from './PeoplesUser';
-import { Wrapper } from './PeoplesStyle'
+import { Wrapper } from './PeoplesStyle';
+import PeoplesHeader from './PeoplesHeader';
 
-function PeoplesPage(props) {
+function PeoplesPage() {
   return (
-    <Wrapper className="mt2">
-      <PeoplesUser />
-      <PeoplesUser />
-      <PeoplesUser />
-      <PeoplesUser />
-      <PeoplesUser />
-      <PeoplesUser />
+    <Wrapper>
+      <PeoplesHeader />
+      <div className="peoples">
+        <PeoplesUser />
+        <PeoplesUser />
+        <PeoplesUser />
+        <PeoplesUser />
+        <PeoplesUser />
+        <PeoplesUser />
+      </div>
     </Wrapper>
   );
 }

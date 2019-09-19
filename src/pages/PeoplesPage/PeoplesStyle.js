@@ -1,17 +1,47 @@
 import styled from 'styled-components';
 import Paper from '@material-ui/core/Paper';
-import { styles } from '../../components/ThemeProvider/Styles';
 
-export const Wrapper = styled(Paper)`
-  padding: 20px;
+export const Wrapper = styled.div`
+  .peoples {
+    margin-right: -5px;
+    margin-left: -5px;
+    display: flex;
+    flex-wrap: wrap;
+  }
 `;
 
-export const UserItem = styled.div`
-  padding: 15px 0;
-  :first-child {
-    padding-top: 0;
-  }
+export const Header = styled(Paper)`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 8px 8px 16px;
+  margin: 16px 0 11px 0;
 
+  .search {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    flex-wrap: nowrap;
+    input {
+      border: none;
+      height: 30px;
+      padding-left: 10px;
+      flex: 1;
+      :focus {
+        outline: none;
+      }
+      ::placeholder {
+        opacity: 0.5;
+      }
+    }
+  }
+`;
+
+export const UserItem = styled(Paper)`
+  min-width: 305px;
+  flex: 1;
+  margin: 5px;
+  line-height: 1.36;
   .user-avatar {
     user-select: none;
     width: 80px;
@@ -23,10 +53,5 @@ export const UserItem = styled.div`
       width: 100%;
       height: 100%;
     }
-  }
-  border-bottom: 1px solid ${styles.borderColor};
-  :last-child {
-    border-bottom: none;
-    padding-bottom: 0;
   }
 `;

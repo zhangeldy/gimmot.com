@@ -1,6 +1,13 @@
 import styled from 'styled-components';
 import { styles } from '../../components/ThemeProvider/Styles';
 
+export const Wrapper = styled.div`
+  .advert-item {
+    padding: 20px 20px 10px;
+  }
+`;
+
+
 export const Marks = styled.div`
   .mark-item {
     :first-child {

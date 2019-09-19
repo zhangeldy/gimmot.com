@@ -7,6 +7,7 @@ import withTranslation from '../../components/_hoc/withTranslation';
 import { Marks } from './AdvertsStyle';
 import AdvertComments from './AdvertComments';
 import Divider from '@material-ui/core/Divider';
+import { Wrapper } from './AdvertsStyle';
 
 const advertsData = [
   {
@@ -49,14 +50,10 @@ const advertsData = [
 
 function AdvertsPage({ t }) {
   return (
-    <div>
+    <Wrapper>
       <AdvertsHeader />
       {advertsData.map((item, index) => (
-        <Paper
-          key={index}
-          className="mt2"
-          style={{ padding: 20, paddingBottom: 10 }}
-        >
+        <Paper key={index} className="advert-item mt2">
           <IconButton
             style={{ padding: 0, marginLeft: 10, marginTop: -5 }}
             tooltip={t('advertItem_addFavorites')}
@@ -78,7 +75,7 @@ function AdvertsPage({ t }) {
           <AdvertComments comments={item.comments} />
         </Paper>
       ))}
-    </div>
+    </Wrapper>
   );
 }
 
