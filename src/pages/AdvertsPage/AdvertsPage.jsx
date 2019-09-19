@@ -5,7 +5,8 @@ import IconButton from '../../_ui/Button/IconButton';
 import StarIcon from '@material-ui/icons/GradeOutlined';
 import withTranslation from '../../components/_hoc/withTranslation';
 import { Marks } from './AdvertsStyle';
-import AdvertComments from "./AdvertComments";
+import AdvertComments from './AdvertComments';
+import Divider from '@material-ui/core/Divider';
 
 const advertsData = [
   {
@@ -51,27 +52,30 @@ function AdvertsPage({ t }) {
     <div>
       <AdvertsHeader />
       {advertsData.map((item, index) => (
-        <Paper key={index} className="mt2">
-          <div className="p2">
-            <IconButton
-              style={{ padding: 0, marginLeft: 10, marginTop: -5 }}
-              tooltip={t('advertItem_addFavorites')}
-              icon={<StarIcon fontSize="small" />}
-            />
-            <div className="right imperceptible">{item.time}</div>
-            <div className="colorPrimary user-name mr1">{item.userName}</div>
-            <div className="imperceptible">{item.params}</div>
-            <div className="py1 fs-medium">{item.text}</div>
-
-            {item.marks && (
-              <Marks className="italic lowercase fs-small">
-                {item.marks.map(mark => (
-                  <span key={mark} className="mark-item">{mark}</span>
-                ))}
-              </Marks>
-            )}
-          </div>
-          <AdvertComments comments={item.comments}/>
+        <Paper
+          key={index}
+          className="mt2"
+          style={{ padding: 20, paddingBottom: 10 }}
+        >
+          <IconButton
+            style={{ padding: 0, marginLeft: 10, marginTop: -5 }}
+            tooltip={t('advertItem_addFavorites')}
+            icon={<StarIcon fontSize="small" />}
+          />
+          <div className="right imperceptible">{item.time}</div>
+          <div className="colorPrimary user-name mr1">{item.userName}</div>
+          <div className="imperceptible">{item.params}</div>
+          <div className="py1 fs-medium">{item.text}</div>
+          <Marks className="italic lowercase fs-small mb2">
+            {item.marks &&
+              item.marks.map(mark => (
+                <span key={mark} className="mark-item">
+                  {mark}
+                </span>
+              ))}
+          </Marks>
+          <Divider />
+          <AdvertComments comments={item.comments} />
         </Paper>
       ))}
     </div>

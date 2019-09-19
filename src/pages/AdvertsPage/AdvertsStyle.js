@@ -15,43 +15,36 @@ export const Marks = styled.div`
 `;
 
 export const Comments = styled.div`
+  margin: 15px 0 0 50px;
   .comment-item {
-    margin: 0 50px 5px;
-    border-top: 1px solid ${styles.borderColor};
     line-height: 1.36;
-
-    :first-child {
-      border: none;
-    }
-
+    margin-bottom: 12px;
     .reply {
       cursor: pointer;
       :hover {
         text-decoration: underline;
       }
     }
-
-    @media only screen and (max-width: 500px) {
-      margin: 0 10px 5px 30px;
-    }
   }
 
   .add-comment {
-    border-top: 1px solid ${styles.borderColor};
-    margin-top: 15px;
     input {
       border: none;
-      border-bottom-left-radius: ${styles.borderRadius};
-      border-bottom-right-radius: ${styles.borderRadius};
-      background-color: transparent;
-      width: 100%;
-      height: 40px;
+      border-radius: ${styles.borderRadius};
+      background-color: ${styles.isDark ? styles.borderColor : 'white'};
+      border: ${styles.isDark ? 'none' : `1px solid ${styles.borderColor}`};
+      width: calc(100% - 50px);
+      height: 34px;
       padding: 7px 13px;
+      margin-right: 5px;
       :focus {
-        border: none;
         box-shadow: none;
         outline: none;
       }
     }
+  }
+
+  @media only screen and (max-width: 500px) {
+    margin: 0 10px 0 30px;
   }
 `;
