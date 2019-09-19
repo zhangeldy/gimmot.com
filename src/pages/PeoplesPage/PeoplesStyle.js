@@ -43,7 +43,9 @@ export const UserItem = styled(Paper)`
   flex: 1;
   margin: 5px;
   line-height: 1.36;
+
   .user-avatar {
+    border: 3px solid green;
     user-select: none;
     width: 80px;
     height: 80px;
