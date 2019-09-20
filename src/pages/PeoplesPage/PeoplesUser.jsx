@@ -6,7 +6,7 @@ const imgLink =
 
 function PeoplesUser() {
   return (
-    <UserItem className="flex flex-wrap p2">
+    <UserItem className="flex flex-wrap">
       <div className="user-avatar">
         <img src={imgLink} alt="user item" />
         <div className="is-online" />
@@ -16,7 +16,6 @@ function PeoplesUser() {
         <div className="imperceptible">Астана, Гетеро</div>
         <div className="imperceptible">170см - 55кг - 16см</div>
         <div className="imperceptible">1,4 км от вас </div>
-        <div className="pointer hover-line">Написать сообщение</div>
       </div>
     </UserItem>
   );

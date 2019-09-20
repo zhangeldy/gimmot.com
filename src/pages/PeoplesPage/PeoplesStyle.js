@@ -43,12 +43,13 @@ export const UserItem = styled(Paper)`
   flex: 1;
   margin: 5px;
   line-height: 1.36;
+  padding: 10px;
 
   .user-avatar {
-    border: 3px solid green;
+    border: 3px solid rgba(113,181,118,0.71);
     user-select: none;
-    width: 80px;
-    height: 80px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
     overflow: hidden;
     cursor: pointer;
