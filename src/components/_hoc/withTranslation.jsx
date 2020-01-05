@@ -1,27 +1,14 @@
-import React from "react";
-import { injectIntl } from "react-intl";
+import React from 'react';
+import { withTranslation as WT } from 'react-i18next';
 
 const withTranslation = Component => {
   class WithTranslation extends React.Component {
     render() {
-      const { intl, ...otherProps } = this.props;
-      return (
-        <Component
-          {...otherProps}
-          lang={intl.locale}
-          t={param => {
-            if (param instanceof Object) {
-              return intl.formatMessage(param);
-            } else {
-              return intl.formatMessage({ id: param });
-            }
-          }}
-        />
-      );
+      const { i18n, ...otherProps } = this.props;
+      return <Component {...otherProps} lang={i18n.language} />;
     }
   }
-
-  return injectIntl(WithTranslation);
+  return WT()(WithTranslation)
 };
 
 export default withTranslation;

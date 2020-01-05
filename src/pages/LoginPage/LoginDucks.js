@@ -2,7 +2,6 @@ import { LoginApi } from "../../_helpers/service";
 import { history } from "../../_helpers/history";
 import { Notice } from "../../utils/Notice";
 import { createReducer } from "redux-starter-kit";
-import { all, put, takeEvery } from 'redux-saga/effects';
 
 /**
  * Constants
@@ -67,17 +66,4 @@ export const login = (login, password) => async dispatch => {
     console.error(e);
     Notice.error("Не удалось авторизоваться")
   }
-};
-
-
-/**
- * Sagas
- */
-
-function* catchSaga() {
-  yield put({ type: TEST_SAGA, testSaga: 'TEST_SAGA_MESSAGE' });
-}
-
-export const loginSaga = function*() {
-  yield all([takeEvery(USER, catchSaga)]);
 };

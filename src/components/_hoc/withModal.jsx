@@ -12,7 +12,8 @@ const withModal = Component => {
         <Component
           {...this.props}
           modal={{
-            data: this.state.data,
+            data: this.state.data, // если null значит модалка закрыта
+            isOpen: !!this.state.data,
             open: data => this.setState({ data , open: true}),
             close: () => this.setState({ data: null, open: false })
           }}

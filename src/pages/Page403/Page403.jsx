@@ -1,8 +1,10 @@
 import React from "react";
 import withTranslation from "../../components/_hoc/withTranslation";
 import { CssBox } from "./Page403Style";
-import Button from "../../_ui/Button/Button";
 import { Link } from "react-router-dom";
+import paths from "../../_helpers/paths";
+import Button from '@material-ui/core/Button';
+
 
 function Page403({ t }) {
   return (
@@ -11,7 +13,7 @@ function Page403({ t }) {
         <div className="error">403</div>
         <div className="oops">{t("page403_oops")}</div>
         <div className="not-found">{t("page403_access")}</div>
-        <Link to="/">
+        <Link to={paths.loginPage}>
           <Button text={t("page403_toHome")} size="large" />
         </Link>
       </div>
