@@ -2,6 +2,7 @@ import React from 'react';
 import { Comments } from './AdvertsStyle';
 import SendIcon from '@material-ui/icons/Send';
 import IconButton from '../../_ui/Button/IconButton';
+import EmojiPicker from '../../components/EmojiPicker/EmojiPicker';
 
 /**
  * @return {null}
@@ -17,8 +18,7 @@ function AdvertComments({ comments }) {
           </div>
 
           <div>
-            Көлеңкенің жарығы бұл кітаппа? авторы кім және оны қайдан оқуға
-            болады??
+            Көлеңкенің жарығы бұл кітаппа? авторы кім және оны қайдан оқуға болады??
           </div>
 
           <div>
@@ -30,6 +30,7 @@ function AdvertComments({ comments }) {
       <div className="add-comment">
         <input className="textPrimary" placeholder="Написать комментарий..." />
         <IconButton icon={<SendIcon style={{ opacity: 0.4 }} />} />
+        <EmojiPicker />
       </div>
     </Comments>
   );
