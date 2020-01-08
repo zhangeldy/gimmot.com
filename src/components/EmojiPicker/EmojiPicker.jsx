@@ -3,6 +3,7 @@ import { Picker } from 'emoji-mart';
 import { styles } from '../ThemeProvider/Styles';
 import styled from 'styled-components';
 import Popover from '@material-ui/core/Popover';
+import withTranslation from '../_hoc/withTranslation';
 
 const Wrapper = styled.div`
   width: 325px;
@@ -50,7 +51,7 @@ const Wrapper = styled.div`
   }
 `;
 
-function EmojiPicker({ anchorEl, handleClose, onSelect }) {
+function EmojiPicker({ anchorEl, handleClose, onSelect, lang }) {
   return (
     <Popover
       open={Boolean(anchorEl)}
@@ -58,11 +59,11 @@ function EmojiPicker({ anchorEl, handleClose, onSelect }) {
       onClose={handleClose}
       anchorOrigin={{
         vertical: 'bottom',
-        horizontal: 'right',
+        horizontal: 'right'
       }}
       transformOrigin={{
         vertical: 'top',
-        horizontal: 'right',
+        horizontal: 'right'
       }}
     >
       <Wrapper>
@@ -76,6 +77,32 @@ function EmojiPicker({ anchorEl, handleClose, onSelect }) {
             border: 'none',
             width: 320
           }}
+          i18n={{
+            categories:
+              lang === 'ru'
+                ? {
+                    recent: 'Часто используемые',
+                    people: 'Эмоции и люди',
+                    nature: 'Животные и растения',
+                    foods: 'Еда и напитки',
+                    activity: 'Спорт и активности',
+                    places: 'Путешествия и транспорт',
+                    objects: 'Предметы',
+                    symbols: 'Символы',
+                    flags: 'Флаги'
+                  }
+                : {
+                    recent: 'asdasd',
+                    people: 'Smileys & People',
+                    nature: 'Animals & Nature',
+                    foods: 'Food & Drink',
+                    activity: 'Activity',
+                    places: 'Travel & Places',
+                    objects: 'Objects',
+                    symbols: 'Symbols',
+                    flags: 'Flags'
+                  }
+          }}
           onSelect={onSelect}
         />
       </Wrapper>
@@ -83,4 +110,4 @@ function EmojiPicker({ anchorEl, handleClose, onSelect }) {
   );
 }
 
-export default EmojiPicker;
+export default withTranslation(EmojiPicker);
