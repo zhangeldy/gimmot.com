@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Comments } from './AdvertsStyle';
 import SendIcon from '@material-ui/icons/Send';
+import EmojiIcon from '@material-ui/icons/EmojiEmotions';
 import IconButton from '../../_ui/Button/IconButton';
 import EmojiPicker from '../../components/EmojiPicker/EmojiPicker';
 
@@ -8,6 +9,7 @@ import EmojiPicker from '../../components/EmojiPicker/EmojiPicker';
  * @return {null}
  */
 function AdvertComments({ comments }) {
+  const [emojiAnchor, setEmojiAnchor] = useState();
   return (
     <Comments>
       {comments.map(comment => (
@@ -27,10 +29,21 @@ function AdvertComments({ comments }) {
           </div>
         </div>
       ))}
-      <div className="add-comment">
-        <input className="textPrimary" placeholder="Написать комментарий..." />
-        <IconButton icon={<SendIcon style={{ opacity: 0.4 }} />} />
-        <EmojiPicker />
+      <div className="add-comment flex items-center">
+        <div className="cmt-field flex items-center">
+          <input className="textPrimary" placeholder="Написать комментарий..." />
+          <IconButton
+            size="small"
+            onClick={event => setEmojiAnchor(event.currentTarget)}
+            icon={<EmojiIcon color="action" fontSize="small" />}
+          />
+        </div>
+        <IconButton size="small" icon={<SendIcon color="action" fontSize="small" />} />
+        <EmojiPicker
+          anchorEl={emojiAnchor}
+          handleClose={() => setEmojiAnchor(null)}
+          onSelect={console.log}
+        />
       </div>
     </Comments>
   );

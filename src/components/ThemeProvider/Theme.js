@@ -66,7 +66,7 @@ export const theme = createMuiTheme({
       sizeSmall: {
         marginLeft: 2,
         marginRight: 2,
-        padding: 8,
+        padding: 5,
       },
     },
   },

@@ -8,6 +8,7 @@ export const styles = {
   textPrimary: theme.palette.text.primary,
   textSecondary: theme.palette.text.secondary,
   bgColor: theme.palette.background.default,
+  bgColorLight: '#3e3e3e',
   borderColor: theme.palette.border.default,
   borderRadius: '4px',
 };

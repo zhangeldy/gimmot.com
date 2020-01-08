@@ -7,7 +7,6 @@ export const Wrapper = styled.div`
   }
 `;
 
-
 export const Marks = styled.div`
   .mark-item {
     :first-child {
@@ -35,18 +34,24 @@ export const Comments = styled.div`
   }
 
   .add-comment {
-    input {
-      border: none;
-      border-radius: ${styles.borderRadius};
+    position: relative;
+    .cmt-field {
+      width: 100%;
       background-color: ${styles.isDark ? styles.borderColor : 'white'};
+      border-radius: ${styles.borderRadius};
       border: ${styles.isDark ? 'none' : `1px solid ${styles.borderColor}`};
-      width: calc(100% - 50px);
-      height: 34px;
-      padding: 7px 13px;
-      margin-right: 5px;
-      :focus {
-        box-shadow: none;
-        outline: none;
+      margin-right: 10px;
+      padding-right: 3px;
+      input {
+        background-color: transparent;
+        border: none;
+        width: 100%;
+        height: 34px;
+        padding: 7px 0 7px 13px;
+        :focus {
+          box-shadow: none;
+          outline: none;
+        }
       }
     }
   }
