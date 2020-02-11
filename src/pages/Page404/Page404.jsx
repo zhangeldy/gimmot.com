@@ -1,11 +1,12 @@
 import React from 'react';
-import withTranslation from '../../components/_hoc/withTranslation';
 import { CssBox } from './Page404Style';
-import Button from '../../_ui/Button/Button';
 import { Link } from 'react-router-dom';
 import paths from '../../_helpers/paths';
+import Button from '@material-ui/core/Button';
+import { useTranslation } from 'react-i18next';
 
-function Page404({ t }) {
+export default function Page404() {
+  const { t } = useTranslation();
   return (
     <CssBox>
       <div className="container">
@@ -13,11 +14,14 @@ function Page404({ t }) {
         <div className="oops">{t('page404_oops')}</div>
         <div className="not-found">{t('page404_notFound')}</div>
         <Link to={paths.loginPage}>
-          <Button text={t('page404_toHome')} size="large" />
+          <Button
+            size="large"
+            variant="contained"
+            color="primary"
+            children={t('page404_toHome')}
+          />
         </Link>
       </div>
     </CssBox>
   );
 }
-
-export default withTranslation(Page404);

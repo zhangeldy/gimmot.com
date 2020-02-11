@@ -1,27 +1,28 @@
 import React from 'react';
-import { AppBar, Toolbar } from '@material-ui/core';
+import { AppBar, Button, Toolbar } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 import { Wrapper } from './HeaderStyle';
 import { ReactComponent as LogoIcon } from '../../_media/logo.svg';
 import HeaderMenu from './HeaderMenu';
-import InheritButton from '../../_ui/Button/InheritButton';
-import withTranslation from '../_hoc/withTranslation';
 import { history } from '../../_helpers/history';
 import paths from '../../_helpers/paths';
+import { useTranslation } from 'react-i18next';
 
-function Header({ user, t }) {
+export default function Header({ user }) {
+  const { t } = useTranslation();
   return (
     <Wrapper>
       <AppBar position="fixed">
         <div className="scroll-fix">
-          <Toolbar className="content" style={{ padding: 0}}>
+          <Toolbar className="content" style={{ padding: 0 }}>
             <Link className="logo" to={paths.advertsPage}>
               <LogoIcon />
             </Link>
             {user && <HeaderMenu />}
             {!user && (
-              <InheritButton
-                text={t('header_login')}
+              <Button
+                color="inherit"
+                children={t('header_login')}
                 onClick={() => history.push(paths.loginPage)}
               />
             )}
@@ -31,5 +32,3 @@ function Header({ user, t }) {
     </Wrapper>
   );
 }
-
-export default withTranslation(Header);

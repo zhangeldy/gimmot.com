@@ -1,4 +1,4 @@
-import { configureStore, getDefaultMiddleware } from 'redux-starter-kit';
+import { configureStore } from 'redux-starter-kit';
 import { combineReducers } from 'redux';
 import reducers from './reducers';
 

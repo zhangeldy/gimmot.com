@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { Comments } from './AdvertsStyle';
 import SendIcon from '@material-ui/icons/Send';
 import EmojiIcon from '@material-ui/icons/EmojiEmotions';
-import IconButton from '../../_ui/Button/IconButton';
 import EmojiPicker from '../../components/EmojiPicker/EmojiPicker';
+import IconButton from '@material-ui/core/IconButton/IconButton';
 
 /**
  * @return {null}
@@ -34,11 +34,14 @@ function AdvertComments({ comments }) {
           <input className="textPrimary" placeholder="Написать комментарий..." />
           <IconButton
             size="small"
+            children={<EmojiIcon color="action" fontSize="small" />}
             onClick={event => setEmojiAnchor(event.currentTarget)}
-            icon={<EmojiIcon color="action" fontSize="small" />}
           />
         </div>
-        <IconButton size="small" icon={<SendIcon color="action" fontSize="small" />} />
+        <IconButton
+          size="small"
+          children={<SendIcon color="action" fontSize="small" />}
+        />
         <EmojiPicker
           anchorEl={emojiAnchor}
           handleClose={() => setEmojiAnchor(null)}

@@ -1,13 +1,14 @@
 import React from 'react';
 import AdvertsHeader from './AdvertsHeader';
 import Paper from '@material-ui/core/Paper';
-import IconButton from '../../_ui/Button/IconButton';
 import StarIcon from '@material-ui/icons/GradeOutlined';
-import withTranslation from '../../components/_hoc/withTranslation';
 import { Marks } from './AdvertsStyle';
 import AdvertComments from './AdvertComments';
 import Divider from '@material-ui/core/Divider';
 import { Wrapper } from './AdvertsStyle';
+import IconButton from '@material-ui/core/IconButton/IconButton';
+import Tooltip from '@material-ui/core/Tooltip';
+import { useTranslation } from 'react-i18next';
 
 const advertsData = [
   {
@@ -17,7 +18,7 @@ const advertsData = [
     marks: ['Хочу сейчас', 'С местом', 'На машине'],
     comments: ['Хочу сейчас', 'С местом', 'На машине'],
     text:
-      'text text text text text text text text text text text text text text\ntext text text text text text text text text text text text text text',
+      'text text text text text text text text text text text text text text\ntext text text text text text text text text text text text text text'
   },
   {
     userName: 'Жангельды, 29',
@@ -26,7 +27,7 @@ const advertsData = [
     marks: ['Хочу сейчас', 'С местом', 'На машине'],
     comments: ['Хочу сейчас', 'С местом', 'На машине'],
     text:
-      'text text text text text text text text text text text text text text\ntext text text text text text text text text text text text text text',
+      'text text text text text text text text text text text text text text\ntext text text text text text text text text text text text text text'
   },
   {
     userName: 'Жангельды, 29',
@@ -35,7 +36,7 @@ const advertsData = [
     marks: ['Хочу сейчас', 'С местом', 'На машине'],
     comments: ['Хочу сейчас', 'С местом', 'На машине'],
     text:
-      'text text text text text text text text text text text text text text\ntext text text text text text text text text text text text text text',
+      'text text text text text text text text text text text text text text\ntext text text text text text text text text text text text text text'
   },
   {
     userName: 'Жангельды, 29',
@@ -44,21 +45,23 @@ const advertsData = [
     marks: ['Хочу сейчас', 'С местом', 'На машине'],
     comments: ['Хочу сейчас', 'С местом', 'На машине'],
     text:
-      'text text text text text text text text text text text text text text\ntext text text text text text text text text text text text text text',
-  },
+      'text text text text text text text text text text text text text text\ntext text text text text text text text text text text text text text'
+  }
 ];
 
-function AdvertsPage({ t }) {
+export default function AdvertsPage() {
+  const { t } = useTranslation();
   return (
     <Wrapper>
       <AdvertsHeader />
       {advertsData.map((item, index) => (
         <Paper key={index} className="advert-item mt2">
-          <IconButton
-            style={{ padding: 0, marginLeft: 10, marginTop: -5 }}
-            tooltip={t('advertItem_addFavorites')}
-            icon={<StarIcon fontSize="small" />}
-          />
+          <Tooltip title={t('advert_addFavorites')} placement="top" className="right">
+            <IconButton
+              style={{ padding: 0, marginLeft: 10, marginTop: -5 }}
+              children={<StarIcon fontSize="small" />}
+            />
+          </Tooltip>
           <div className="right imperceptible">{item.time}</div>
           <div className="colorPrimary user-name mr1">{item.userName}</div>
           <div className="imperceptible">{item.params}</div>
@@ -78,5 +81,3 @@ function AdvertsPage({ t }) {
     </Wrapper>
   );
 }
-
-export default withTranslation(AdvertsPage);

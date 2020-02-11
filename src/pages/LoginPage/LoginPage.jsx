@@ -1,14 +1,9 @@
-import React from "react";
-import { login } from "./LoginDucks";
-import { connect } from "react-redux";
-import { compose } from "redux";
-import withTranslation from "../../components/_hoc/withTranslation";
+import React from 'react';
+import { login } from './LoginDucks';
+import { connect } from 'react-redux';
 
 function LoginPage({ text, login }) {
   return <div>LoginPage</div>;
 }
 
-export default compose(
-  withTranslation,
-  connect(null, { login })
-)(LoginPage);
+export default connect(null, { login })(LoginPage);

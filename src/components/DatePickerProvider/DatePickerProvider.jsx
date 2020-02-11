@@ -1,17 +1,15 @@
 import React from 'react';
 import { MuiPickersUtilsProvider } from '@material-ui/pickers';
 import MomentUtils from '@date-io/moment';
-import "moment/locale/kk";
-import "moment/locale/ru";
+import { useTranslation } from 'react-i18next';
+import 'moment/locale/kk';
+import 'moment/locale/ru';
 
-import withTranslation from '../_hoc/withTranslation';
-
-function DatePickerProvider({ lang, children }) {
+export default function DatePickerProvider({ children }) {
+  const { i18n } = useTranslation();
   return (
-    <MuiPickersUtilsProvider utils={MomentUtils} locale={lang}>
+    <MuiPickersUtilsProvider utils={MomentUtils} locale={i18n.language}>
       {children}
     </MuiPickersUtilsProvider>
   );
 }
-
-export default withTranslation(DatePickerProvider);

@@ -3,7 +3,7 @@ import { Picker } from 'emoji-mart';
 import { styles } from '../ThemeProvider/Styles';
 import styled from 'styled-components';
 import Popover from '@material-ui/core/Popover';
-import withTranslation from '../_hoc/withTranslation';
+import { useTranslation } from 'react-i18next';
 
 const Wrapper = styled.div`
   width: 325px;
@@ -51,20 +51,15 @@ const Wrapper = styled.div`
   }
 `;
 
-function EmojiPicker({ anchorEl, handleClose, onSelect, lang }) {
+export default function EmojiPicker({ anchorEl, handleClose, onSelect }) {
+  const { i18n } = useTranslation();
   return (
     <Popover
       open={Boolean(anchorEl)}
       anchorEl={anchorEl}
       onClose={handleClose}
-      anchorOrigin={{
-        vertical: 'bottom',
-        horizontal: 'right'
-      }}
-      transformOrigin={{
-        vertical: 'top',
-        horizontal: 'right'
-      }}
+      anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+      transformOrigin={{ vertical: 'top', horizontal: 'right' }}
     >
       <Wrapper>
         <Picker
@@ -79,7 +74,7 @@ function EmojiPicker({ anchorEl, handleClose, onSelect, lang }) {
           }}
           i18n={{
             categories:
-              lang === 'ru'
+              i18n.language === 'ru'
                 ? {
                     recent: 'Часто используемые',
                     people: 'Эмоции и люди',
@@ -109,5 +104,3 @@ function EmojiPicker({ anchorEl, handleClose, onSelect, lang }) {
     </Popover>
   );
 }
-
-export default withTranslation(EmojiPicker);

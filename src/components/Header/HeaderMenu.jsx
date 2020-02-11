@@ -1,40 +1,57 @@
 import React, { useState } from 'react';
-import MenuItem from '../../_ui/Menu/MenuItem';
-import Menu from '../../_ui/Menu/Menu';
-import withTranslation from '../_hoc/withTranslation';
 import AccountIcon from '@material-ui/icons/AccountCircle';
 import SettingsIcon from '@material-ui/icons/Settings';
 import ForwardIcon from '@material-ui/icons/Forward';
 import { Link } from 'react-router-dom';
-import IconButton from '../../_ui/Button/IconButton';
+import Menu from '@material-ui/core/Menu/Menu';
+import MenuItem from '@material-ui/core/MenuItem/MenuItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import IconButton from '@material-ui/core/IconButton/IconButton';
+import { useTranslation } from 'react-i18next';
 
-function HeaderMenu({ t }) {
+export default function HeaderMenu() {
+  const { t } = useTranslation();
   const [anchor, setAnchor] = useState(null);
   const menuItems = [
     { text: t('headerMenu_profile'), path: '/profile', icon: AccountIcon },
     { text: t('headerMenu_settings'), path: '/settings', icon: SettingsIcon },
-    { text: t('headerMenu_logout'), path: '/logout', icon: ForwardIcon },
+    { text: t('headerMenu_logout'), path: '/logout', icon: ForwardIcon }
   ];
   return (
     <div>
       <IconButton
         color="inherit"
+        children={<AccountIcon />}
         onClick={ev => setAnchor(ev.currentTarget)}
-        icon={<AccountIcon />}
       />
-      <Menu anchor={anchor} style={{ marginTop: 35 }} onClose={setAnchor}>
+      <Menu
+        disableAutoFocusItem
+        anchorEl={anchor}
+        open={Boolean(anchor)}
+        anchorOrigin={{
+          vertical: 'top',
+          horizontal: 'right'
+        }}
+        transformOrigin={{
+          vertical: 'top',
+          horizontal: 'right'
+        }}
+        style={{ marginTop: 35 }}
+        onClose={setAnchor}
+      >
         {menuItems.map(({ text, path, icon: Icon }) => (
           <Link to={path} key={path} onClick={() => setAnchor(null)}>
-            <MenuItem
-              style={{ minWidth: 170 }}
-              icon={<Icon fontSize="small" />}
-              children={text}
-            />
+            <MenuItem style={{ minWidth: 170 }}>
+              <ListItemIcon
+                style={{ minWidth: 'auto' }}
+                className="mr2"
+                children={<Icon fontSize="small" />}
+              />
+              {text}
+            </MenuItem>
           </Link>
         ))}
       </Menu>
     </div>
   );
 }
-
-export default withTranslation(HeaderMenu);
