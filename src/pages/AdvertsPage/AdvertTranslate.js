@@ -10,7 +10,7 @@ export default {
     advertAdd_age: 'Возраст',
     advertAdd_country: 'Город',
     advertAdd_role: 'Роль',
-    advertAdd_params: 'Рост/Вес/Размер',
+    advertAdd_params: 'Рост / Вес / Размер',
     advertAdd_text: 'Текст',
     advertAdd_publish: 'Опубликовать',
   }

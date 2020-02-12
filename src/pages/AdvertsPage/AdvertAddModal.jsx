@@ -11,15 +11,23 @@ import {
   IconButton
 } from '@material-ui/core';
 
-const Field = ({ label, name, register, ...rest }) => (
-  <Row label={label}>
-    <TextField
-      {...rest}
-      name={name}
-      inputProps={{ ref: register({ required: true, maxLength: 50 }) }}
-    />
-  </Row>
-);
+const Field = ({ label, name, register, multiline }) => {
+  let props = {};
+  if (multiline) {
+    props.multiline = true;
+    props.rows = 2;
+    props.rowsMax = 2;
+  }
+  return (
+    <Row label={label}>
+      <TextField
+        {...props}
+        name={name}
+        inputProps={{ ref: register({ required: true, maxLength: 50 }) }}
+      />
+    </Row>
+  );
+};
 
 function AdvertAddModal({ open, onClose, fullScreen }) {
   const { t } = useTranslation();
@@ -39,14 +47,7 @@ function AdvertAddModal({ open, onClose, fullScreen }) {
           <Field label={t('advertAdd_country')} name="country" register={register} />
           <Field label={t('advertAdd_role')} name="role" register={register} />
           <Field label={t('advertAdd_params')} name="params" register={register} />
-          <Field
-            label={t('advertAdd_text')}
-            name="text"
-            register={register}
-            multiline
-            rows={2}
-            rowsMax={10}
-          />
+          <Field label={t('advertAdd_text')} name="text" register={register} multiline />
           <div className="right-align mt1">
             <Button type="submit" children={t('advertAdd_publish')} />
           </div>
