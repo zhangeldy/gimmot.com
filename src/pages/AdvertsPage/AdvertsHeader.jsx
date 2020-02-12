@@ -4,7 +4,7 @@ import StarActiveIcon from '@material-ui/icons/Grade';
 import FilterIcon from '@material-ui/icons/FilterList';
 import AdvertActiveIcon from '@material-ui/icons/CalendarViewDay';
 import AdvertIcon from '@material-ui/icons/CalendarViewDayOutlined';
-import AdvertAdd from './AdvertAdd';
+import AdvertAddModal from './AdvertAddModal';
 import { useTranslation } from 'react-i18next';
 import { Tooltip, IconButton, Button, Paper } from '@material-ui/core';
 
@@ -37,7 +37,7 @@ export default function AdvertsHeader() {
           />
         </Tooltip>
       </div>
-      <AdvertAdd open={addModal} onClose={() => setAddModal(false)} />
+      <AdvertAddModal open={addModal} onClose={() => setAddModal(false)} />
     </Paper>
   );
 }

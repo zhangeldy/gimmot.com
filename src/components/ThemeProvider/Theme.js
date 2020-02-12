@@ -79,6 +79,31 @@ const getTheme = () => {
         label: {
           textTransform: 'none'
         }
+      },
+      MuiOutlinedInput: {
+        adornedEnd: {
+          paddingRight: '3px'
+        },
+        adornedStart: {
+          paddingLeft: '3px'
+        },
+        input: {
+          padding: '10px !important',
+          paddingBottom: '7px !important',
+          paddingTop: '7px !important',
+          height: 'inherit',
+          backgroundColor: isDark ? 'rgba(125,125,125,0.2)' : 'none',
+          fontSize: '13px'
+        },
+        multiline: {
+          padding: '0 !important'
+        }
+      },
+      MuiFormControl: {
+        root: {
+          marginTop: 2,
+          marginBottom: 2
+        }
       }
     }
   };

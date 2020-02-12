@@ -5,6 +5,13 @@ export default {
     advert_favorites: 'Избранные',
     advert_myAdverts: 'Мои объяления',
     advert_addFavorites: 'Добавить в избранные',
-    advert_add: 'Опубликовать'
+
+    advertAdd_name: 'Псевдоним',
+    advertAdd_age: 'Возраст',
+    advertAdd_country: 'Город',
+    advertAdd_role: 'Роль',
+    advertAdd_params: 'Рост/Вес/Размер',
+    advertAdd_text: 'Текст',
+    advertAdd_publish: 'Опубликовать',
   }
 };
