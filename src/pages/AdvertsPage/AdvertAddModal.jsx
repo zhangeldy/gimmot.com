@@ -23,7 +23,7 @@ const Field = ({ label, name, register, multiline }) => {
       <TextField
         {...props}
         name={name}
-        inputProps={{ ref: register({ required: true, maxLength: 50 }) }}
+        inputRef={register({ required: true, maxLength: 50 })}
       />
     </Row>
   );
@@ -31,7 +31,7 @@ const Field = ({ label, name, register, multiline }) => {
 
 function AdvertAddModal({ open, onClose, fullScreen }) {
   const { t } = useTranslation();
-  const { register, handleSubmit, errors } = useForm();
+  const { register, handleSubmit } = useForm();
   const onSubmit = data => console.log(data);
 
   return (
