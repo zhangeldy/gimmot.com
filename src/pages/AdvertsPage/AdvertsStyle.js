@@ -3,7 +3,7 @@ import { styles } from '../../components/ThemeProvider/Styles';
 
 export const Wrapper = styled.div`
   .advert-item {
-    padding: 20px 20px 10px;
+    padding: 20px 20px 15px;
   }
 `;
 

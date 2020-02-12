@@ -54,13 +54,7 @@ const Wrapper = styled.div`
 export default function EmojiPicker({ anchorEl, handleClose, onSelect }) {
   const { i18n } = useTranslation();
   return (
-    <Popover
-      open={Boolean(anchorEl)}
-      anchorEl={anchorEl}
-      onClose={handleClose}
-      anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
-      transformOrigin={{ vertical: 'top', horizontal: 'right' }}
-    >
+    <Popover open={!!anchorEl} anchorEl={anchorEl} onClose={handleClose}>
       <Wrapper>
         <Picker
           darkMode={styles.isDark}

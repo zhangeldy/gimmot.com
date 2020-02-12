@@ -21,6 +21,7 @@ export default function Header({ user }) {
             {user && <HeaderMenu />}
             {!user && (
               <Button
+                variant="text"
                 color="inherit"
                 children={t('header_login')}
                 onClick={() => history.push(paths.loginPage)}

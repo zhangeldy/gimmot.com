@@ -25,19 +25,10 @@ export default function HeaderMenu() {
         onClick={ev => setAnchor(ev.currentTarget)}
       />
       <Menu
-        disableAutoFocusItem
         anchorEl={anchor}
-        open={Boolean(anchor)}
-        anchorOrigin={{
-          vertical: 'top',
-          horizontal: 'right'
-        }}
-        transformOrigin={{
-          vertical: 'top',
-          horizontal: 'right'
-        }}
+        open={!!anchor}
         style={{ marginTop: 35 }}
-        onClose={setAnchor}
+        onClose={() => setAnchor(null)}
       >
         {menuItems.map(({ text, path, icon: Icon }) => (
           <Link to={path} key={path} onClick={() => setAnchor(null)}>

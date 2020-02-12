@@ -33,15 +33,11 @@ function AdvertComments({ comments }) {
         <div className="cmt-field flex items-center">
           <input className="textPrimary" placeholder="Написать комментарий..." />
           <IconButton
-            size="small"
             children={<EmojiIcon color="action" fontSize="small" />}
             onClick={event => setEmojiAnchor(event.currentTarget)}
           />
         </div>
-        <IconButton
-          size="small"
-          children={<SendIcon color="action" fontSize="small" />}
-        />
+        <IconButton children={<SendIcon color="action" fontSize="small" />} />
         <EmojiPicker
           anchorEl={emojiAnchor}
           handleClose={() => setEmojiAnchor(null)}

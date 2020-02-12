@@ -19,16 +19,15 @@ export default function PeoplesHeader() {
         <input className="textPrimary" placeholder="Поиск" />
       </div>
       <div>
-        <Tooltip title={t('peoples_favorites')} placement="top" className="right">
+        <Tooltip title={t('peoples_favorites')}>
           <IconButton
-            style={{ padding: 5, marginLeft: 5 }}
             onClick={() => setFavorites(!favorites)}
             color={favorites ? 'primary' : 'default'}
             children={favorites ? <StarActiveIcon /> : <StarIcon />}
           />
         </Tooltip>
-        <Tooltip title={t('peoples_filter')} placement="top" className="right">
-          <IconButton style={{ padding: 5, marginLeft: 5 }} children={<FilterIcon />} />
+        <Tooltip title={t('peoples_filter')}>
+          <IconButton children={<FilterIcon />} />
         </Tooltip>
       </div>
     </Header>

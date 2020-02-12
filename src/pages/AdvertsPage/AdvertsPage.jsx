@@ -56,9 +56,9 @@ export default function AdvertsPage() {
       <AdvertsHeader />
       {advertsData.map((item, index) => (
         <Paper key={index} className="advert-item mt2">
-          <Tooltip title={t('advert_addFavorites')} placement="top" className="right">
+          <Tooltip title={t('advert_addFavorites')} className="right">
             <IconButton
-              style={{ padding: 0, marginLeft: 10, marginTop: -5 }}
+              style={{ transform: 'translate(10px, -8px)' }}
               children={<StarIcon fontSize="small" />}
             />
           </Tooltip>
