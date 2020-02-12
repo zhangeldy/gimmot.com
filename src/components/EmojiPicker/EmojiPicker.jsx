@@ -7,7 +7,8 @@ import { useTranslation } from 'react-i18next';
 
 const Wrapper = styled.div`
   width: 325px;
-  background-color: ${styles.bgColorLight} !important;
+  margin-top: 5px;
+  background-color: ${styles.isDark ? styles.bgColorLight : 'inherit'} !important;
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.35) !important;
   border-radius: ${styles.borderRadius};
   padding-top: 5px;
@@ -21,7 +22,7 @@ const Wrapper = styled.div`
   .emoji-mart-category-label span {
     font-size: 12px;
     color: #999999 !important;
-    background-color: ${styles.bgColorLight} !important;
+    background-color: ${styles.isDark ? styles.bgColorLight : 'inherit'} !important;
   }
   .emoji-mart-category .emoji-mart-emoji span {
     cursor: pointer !important;
@@ -54,7 +55,12 @@ const Wrapper = styled.div`
 export default function EmojiPicker({ anchorEl, handleClose, onSelect }) {
   const { i18n } = useTranslation();
   return (
-    <Popover open={!!anchorEl} anchorEl={anchorEl} onClose={handleClose}>
+    <Popover
+      open={!!anchorEl}
+      anchorEl={anchorEl}
+      onClose={handleClose}
+      PaperProps={{ style: { backgroundColor: 'transparent' } }}
+    >
       <Wrapper>
         <Picker
           darkMode={styles.isDark}
