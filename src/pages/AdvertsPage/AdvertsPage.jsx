@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useReducer } from 'react';
 import AdvertsHeader from './AdvertsHeader';
 import Paper from '@material-ui/core/Paper';
 import StarIcon from '@material-ui/icons/GradeOutlined';
@@ -9,6 +9,7 @@ import { Wrapper } from './AdvertsStyle';
 import IconButton from '@material-ui/core/IconButton/IconButton';
 import Tooltip from '@material-ui/core/Tooltip';
 import { useTranslation } from 'react-i18next';
+import { initialState, reducer } from "../LoginPage/LoginStore";
 
 const advertsData = [
   {
@@ -50,6 +51,8 @@ const advertsData = [
 ];
 
 export default function AdvertsPage() {
+  const [state, dispatch] = useReducer(initialState, reducer);
+  console.log(dispatch)
   const { t } = useTranslation();
   return (
     <Wrapper>
