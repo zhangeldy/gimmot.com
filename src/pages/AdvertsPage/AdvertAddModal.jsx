@@ -16,7 +16,7 @@ const Field = ({ label, name, register, multiline }) => {
   if (multiline) {
     props.multiline = true;
     props.rows = 2;
-    props.rowsMax = 2;
+    props.rowsMax = 5;
   }
   return (
     <Row label={label}>

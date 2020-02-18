@@ -9,6 +9,7 @@ import Page404 from '../pages/Page404/Page404';
 import Header from '../components/Header/Header';
 import MainTabs from '../components/MainTabs/MainTabs';
 import paths from '../_helpers/paths';
+import UserModal from '../components/UserModal/UserModal';
 
 export default function Root() {
   const dispatch = useDispatch();
@@ -19,6 +20,7 @@ export default function Root() {
     <>
       <NotificationContainer />
       <Header />
+      <UserModal />
 
       <div className="scroll-fix">
         <div className="content pb2">

@@ -9,6 +9,7 @@ import { Wrapper } from './AdvertsStyle';
 import IconButton from '@material-ui/core/IconButton/IconButton';
 import Tooltip from '@material-ui/core/Tooltip';
 import { useTranslation } from 'react-i18next';
+import { Link, useLocation } from 'react-router-dom';
 
 const advertsData = [
   {
@@ -51,6 +52,7 @@ const advertsData = [
 
 export default function AdvertsPage() {
   const { t } = useTranslation();
+  const { pathname } = useLocation();
   return (
     <Wrapper>
       <AdvertsHeader />
@@ -63,7 +65,11 @@ export default function AdvertsPage() {
             />
           </Tooltip>
           <div className="right imperceptible">{item.time}</div>
-          <div className="colorPrimary user-name mr1">{item.userName}</div>
+          <Link
+            to={`${pathname}?user=654`}
+            className="colorPrimary user-name mr1"
+            children={item.userName}
+          />
           <div className="imperceptible">{item.params}</div>
           <div className="py1 fs-medium">{item.text}</div>
           <Marks className="italic lowercase fs-small mb2">
