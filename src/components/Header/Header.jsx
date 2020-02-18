@@ -7,9 +7,12 @@ import HeaderMenu from './HeaderMenu';
 import { history } from '../../_helpers/history';
 import paths from '../../_helpers/paths';
 import { useTranslation } from 'react-i18next';
+import { useSelector } from "react-redux";
+import { loginModule } from "../../pages/LoginPage/LoginDucks";
 
-export default function Header({ user }) {
+export default function Header() {
   const { t } = useTranslation();
+  const user = useSelector(state => state[loginModule].user);
   return (
     <Wrapper>
       <AppBar position="fixed">

@@ -26,17 +26,17 @@ const routerProps = {
   messagesPage: {
     path: paths.messagesPage,
     component: MessagesPage,
-    permission: [permissions.messagesPage],
+    permissions: [permissions.messagesPage],
   },
   profilePage: {
     path: paths.profilePage,
     component: ProfilePage,
-    permission: [permissions.profilePage],
+    permissions: [permissions.profilePage],
   },
   settingsPage: {
     path: paths.settingsPage,
     component: SettingsPage,
-    permission: [permissions.settingsPage],
+    permissions: [permissions.settingsPage],
   },
 };
 

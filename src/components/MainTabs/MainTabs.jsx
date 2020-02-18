@@ -9,8 +9,11 @@ import { history } from '../../_helpers/history';
 import { withRouter } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import paths from '../../_helpers/paths';
+import { useSelector } from "react-redux";
+import { loginModule } from "../../pages/LoginPage/LoginDucks";
 
-function MainTabs({ match, user }) {
+function MainTabs({ match }) {
+  const user = useSelector(state => state[loginModule].user);
   return (
     <Wrapper>
       <Tabs

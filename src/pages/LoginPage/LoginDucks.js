@@ -1,40 +1,41 @@
-import { LoginApi } from "../../_helpers/service";
-import { history } from "../../_helpers/history";
-import { Notice } from "../../utils/Notice";
-import { createReducer } from "redux-starter-kit";
+import { LoginApi } from '../../_helpers/service';
+import { history } from '../../_helpers/history';
+import { Notice } from '../../utils/Notice';
+import { createReducer } from 'redux-starter-kit';
 
 /**
  * Constants
  */
 
-export const loginModule = "login";
+export const loginModule = 'login';
 export const USER = `${loginModule}/USER`;
-export const LOGIN = `${loginModule}/LOGIN`;
 export const LOADING = `${loginModule}/LOADING`;
-export const TEST_SAGA = `${loginModule}/TEST_SAGA`;
+export const LOADING_LOGIN = `${loginModule}/LOADING_LOGIN`;
+export const PERMISSIONS = `${loginModule}/PERMISSIONS`;
 
 /**
  * Reducer
  */
 
 const initialState = {
-  loadingLogin: true,
   loading: true,
+  loadingLogin: true,
   user: null,
-  permissions: [],
-  testSaga: ''
+  permissions: []
 };
 
 export default createReducer(initialState, {
-  [USER]: (state, action) => {
-    state.user = action.user;
-    state.permissions = action.permissions;
+  [LOADING]: (state, { payload }) => {
+    state.loading = payload;
   },
-  [LOADING]: (state, action) => {
-    state.loading = action.loading;
+  [LOADING_LOGIN]: (state, { payload }) => {
+    state.loadingLogin = payload;
   },
-  [TEST_SAGA]: (state, action) => {
-    state.testSaga = action.testSaga;
+  [USER]: (state, { payload }) => {
+    state.user = payload;
+  },
+  [PERMISSIONS]: (state, { payload }) => {
+    state.permissions = payload;
   }
 });
 
@@ -44,26 +45,26 @@ export default createReducer(initialState, {
 
 export const checkAuth = () => async dispatch => {
   try {
-    let token = localStorage.getItem("token");
+    let token = localStorage.getItem('token');
     let { data } = await LoginApi.checkAuth(token);
     if (data) {
-      dispatch({ type: USER, ...data });
+      dispatch({ type: USER, payload: data.user });
+      dispatch({ type: PERMISSIONS, payload: data.permissions });
     }
   } catch (e) {
     console.error(e);
   } finally {
-    dispatch({ type: LOADING, loading: false });
+    dispatch({ type: LOADING, payload: false });
   }
 };
 
 export const login = (login, password) => async dispatch => {
   try {
-    let response = await LoginApi.login(login, password);
-    dispatch({ type: LOGIN, user: response.data });
-    localStorage.setItem("user", response.data);
-    history.push("/");
+    let { data } = await LoginApi.login(login, password);
+    dispatch({ type: USER, payload: data.user });
+    history.push('/');
   } catch (e) {
     console.error(e);
-    Notice.error("Не удалось авторизоваться")
+    Notice.error('Не удалось авторизоваться');
   }
 };
