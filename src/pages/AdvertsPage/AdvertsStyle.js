@@ -7,19 +7,6 @@ export const Wrapper = styled.div`
   }
 `;
 
-export const Marks = styled.div`
-  .mark-item {
-    :first-child {
-      margin-left: 0;
-    }
-    padding: 2px 10px;
-    margin: 0 3px;
-    border-radius: ${styles.borderRadius};
-    opacity: 0.8;
-    background-color: ${styles.isDark ? '#676767' : '#ececec'};
-  }
-`;
-
 export const Comments = styled.div`
   margin: 15px 0 0 50px;
   .comment-item {

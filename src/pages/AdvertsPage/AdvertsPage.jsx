@@ -2,7 +2,6 @@ import React from 'react';
 import AdvertsHeader from './AdvertsHeader';
 import Paper from '@material-ui/core/Paper';
 import StarIcon from '@material-ui/icons/GradeOutlined';
-import { Marks } from './AdvertsStyle';
 import AdvertComments from './AdvertComments';
 import Divider from '@material-ui/core/Divider';
 import { Wrapper } from './AdvertsStyle';
@@ -10,6 +9,7 @@ import IconButton from '@material-ui/core/IconButton/IconButton';
 import Tooltip from '@material-ui/core/Tooltip';
 import { useTranslation } from 'react-i18next';
 import useUserModal from '../../components/UserModal/useUserModal';
+import Marks from '../../components/Marks/Marks';
 
 const advertsData = [
   {
@@ -72,14 +72,7 @@ export default function AdvertsPage() {
           />
           <div className="imperceptible">{item.params}</div>
           <div className="py1 fs-medium">{item.text}</div>
-          <Marks className="italic lowercase fs-small mb2">
-            {item.marks &&
-              item.marks.map(mark => (
-                <span key={mark} className="mark-item">
-                  {mark}
-                </span>
-              ))}
-          </Marks>
+          <Marks data={item.marks} style={{ margin: '0 0 10px -3px' }} />
           <Divider />
           <AdvertComments comments={item.comments} />
         </Paper>

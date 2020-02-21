@@ -3,13 +3,9 @@ import { Dialog, IconButton, withMobileDialog, Divider } from '@material-ui/core
 import CloseIcon from '@material-ui/icons/Close';
 import useUserModal from './useUserModal';
 import { useTranslation } from 'react-i18next';
-
-const Row = ({ label, text }) => (
-  <div className="clearfix my1">
-    <div className="col col-6 imperceptible">{label} : </div>
-    <div className="col col-6">{text}</div>
-  </div>
-);
+import { PinDrop, Person, Favorite } from '@material-ui/icons';
+import SearchIcon from './SearchIcon';
+import Marks from '../Marks/Marks';
 
 function UserModal({ fullScreen }) {
   const { t } = useTranslation();
@@ -29,45 +25,78 @@ function UserModal({ fullScreen }) {
     lat: 51.1879,
     lon: 71.4357,
     last_visit: '2020-02-20T17:00:34',
-    hb_region: 'Астана',
-    hb_ethnicity: 'asia',
-    hb_body_type: 'sport',
-    hb_sex_role: 'getereo',
-    hb_family_status: 'Женат'
+    region: 'Астана',
+    ethnicity: 'Азиат',
+    sex_role: 'Пассив',
+    family_status: 'Состою в браке',
+    marks: ['Хочу сейчас', 'С местом', 'На машине'],
+    purpose: ['Переписка', 'Дружба', 'Отношение', 'Секс']
   };
+  const params = [
+    user.ethnicity,
+    `${user.growth}см`,
+    `${user.weight}кг`,
+    `${user.penis}см`
+  ];
 
   return (
     <Dialog
       open={userModal.isOpen}
       onClose={userModal.close}
       fullScreen={fullScreen}
-      maxWidth="md"
+      PaperProps={{ style: { maxWidth: 520 } }}
       fullWidth
     >
       <div style={{ position: 'absolute', top: 10, right: 10 }}>
         <IconButton onClick={userModal.close} children={<CloseIcon />} />
       </div>
       <div className="p3">
-        <div className="flex flex-wrap justify-center">
+        <div className="flex flex-wrap ">
           <img
-            className="circle"
+            className="circle mb3"
             width="150"
             height="150"
             src={user.avatar}
             alt={user.name}
           />
-          <div className="ml3 fullwidth" style={{ maxWidth: 650 }}>
-            <div className="fs-large mb2">{user.name}</div>
-            <Divider style={{ marginBottom: 15 }} />
-            <Row label={'Регион'} text={user.hb_region} />
-            <Row label={'День рождения'} text={user.birth_date} />
-            <Row label={'Рост / Вес / Размер'} text={`${user.growth}см / ${user.weight}кг / ${user.penis}см`}/>
-            <Row label={'Роль'} text={user.hb_sex_role}/>
-            <Row label={'Телосложение'} text={user.hb_body_type}/>
-            <Row label={'Этническая принадлежность'} text={user.hb_ethnicity}/>
-            <Row label={'Семейное положение'} text={user.hb_family_status}/>
+          <div className="" style={{ maxWidth: 270, width: '100%', marginLeft: fullScreen ? 0 : 30 }}>
+            <div className="">
+              <span className="fs-large mr1">{user.name}</span>
+              <span className="imperceptible">
+                {user.age}, {user.sex_role}
+              </span>
+            </div>
+            <div className="imperceptible fs-small" style={{ margin: '5px 0' }}>
+              Заходил 18 фев в 12:31
+            </div>
+            <Divider style={{ marginBottom: 10 }} />
+            <div className="flex items-center my1">
+              <PinDrop color="action" fontSize="small" />
+              <div className="ml1">
+                {user.region} <span className="imperceptible">1.5 км</span>
+              </div>
+            </div>
+            <div className="flex items-center my1">
+              <Person color="action" fontSize="small" />
+              <div className="ml1">{params.join(', ')}</div>
+            </div>
+            <div className="flex items-center my1">
+              <Favorite color="action" style={{ fontSize: 16, margin: '1.5px' }} />
+              <div className="ml1">{user.family_status}</div>
+            </div>
+            <div className="flex items-center my1">
+              <SearchIcon />
+              <div className="ml1">{user.purpose.join(', ')}</div>
+            </div>
+            <Marks data={user.marks} className="my2" />
           </div>
         </div>
+        <div>
+          Описание Описание Описание Описание Описание Описание Описание Описание Описание
+          Описание Описание Описание Описание Описание
+        </div>
+        <div>Написать, В избранное</div>
+        <div>photos</div>
       </div>
     </Dialog>
   );
