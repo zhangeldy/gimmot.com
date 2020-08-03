@@ -1,20 +1,15 @@
-import Translate from 'i18next';
+import i18next from 'i18next';
 import { initReactI18next } from 'react-i18next';
-import Page403Translate from '../pages/Page403/Page403Translate';
-import Page404Translate from '../pages/Page404/Page404Translate';
-import AdvertTranslate from '../pages/AdvertsPage/AdvertTranslate';
-import HeaderTranslate from '../components/Header/HeaderTranslate';
 
-const resources = {
-  ru: {
-    translation: {
-      ...Page403Translate.ru,
-      ...Page404Translate.ru,
-      ...AdvertTranslate.ru,
-      ...HeaderTranslate.ru
-    }
+let language = 'ru';
+if (window.localStorage.getItem('lang')) {
+  language = window.localStorage.getItem('lang');
+}
+
+i18next.use(initReactI18next).init({ resources: {}, lng: language });
+
+export const addTranslation = (translations) => {
+  for (const lang of Object.keys(translations)) {
+    i18next.addResources(lang, 'translation', translations[lang]);
   }
 };
-
-Translate.use(initReactI18next).init({ resources, lng: 'ru' });
-export default Translate;

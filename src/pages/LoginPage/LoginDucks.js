@@ -1,7 +1,7 @@
 import { LoginApi } from '../../_helpers/service';
 import { history } from '../../_helpers/history';
 import { Notice } from '../../utils/Notice';
-import { createReducer } from 'redux-starter-kit';
+import { createReducer } from '@reduxjs/toolkit';
 
 /**
  * Constants
@@ -21,7 +21,7 @@ const initialState = {
   loading: true,
   loadingLogin: true,
   user: null,
-  permissions: []
+  permissions: [],
 };
 
 export default createReducer(initialState, {
@@ -36,14 +36,14 @@ export default createReducer(initialState, {
   },
   [PERMISSIONS]: (state, { payload }) => {
     state.permissions = payload;
-  }
+  },
 });
 
 /**
  * Actions
  */
 
-export const checkAuth = () => async dispatch => {
+export const checkAuth = () => async (dispatch) => {
   try {
     let token = localStorage.getItem('token');
     let { data } = await LoginApi.checkAuth(token);
@@ -58,7 +58,7 @@ export const checkAuth = () => async dispatch => {
   }
 };
 
-export const login = (login, password) => async dispatch => {
+export const login = (login, password) => async (dispatch) => {
   try {
     let { data } = await LoginApi.login(login, password);
     dispatch({ type: USER, payload: data.user });

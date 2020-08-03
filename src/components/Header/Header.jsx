@@ -1,18 +1,19 @@
 import React from 'react';
 import { AppBar, Button, Toolbar } from '@material-ui/core';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { Wrapper } from './HeaderStyle';
 import { ReactComponent as LogoIcon } from '../../_media/logo.svg';
 import HeaderMenu from './HeaderMenu';
-import { history } from '../../_helpers/history';
 import paths from '../../_helpers/paths';
 import { useTranslation } from 'react-i18next';
-import { useSelector } from "react-redux";
-import { loginModule } from "../../pages/LoginPage/LoginDucks";
+import { useSelector } from 'react-redux';
+import { loginModule } from '../../pages/LoginPage/LoginDucks';
+import './HeaderTranslate';
 
 export default function Header() {
   const { t } = useTranslation();
-  const user = useSelector(state => state[loginModule].user);
+  const history = useHistory();
+  const user = useSelector((state) => state[loginModule].user);
   return (
     <Wrapper>
       <AppBar position="fixed">

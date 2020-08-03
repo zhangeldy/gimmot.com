@@ -1,4 +1,6 @@
-export default {
+import { addTranslation } from '../../_helpers/Translate';
+
+addTranslation({
   ru: {
     advert_addAdvert: 'Написать объявление',
     advert_filter: 'Фильтр',
@@ -13,5 +15,5 @@ export default {
     advertAdd_params: 'Рост / Вес / Размер',
     advertAdd_text: 'Текст',
     advertAdd_publish: 'Опубликовать',
-  }
-};
+  },
+});

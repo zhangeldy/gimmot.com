@@ -2,13 +2,11 @@ import React from 'react';
 import { Dialog, IconButton, withMobileDialog, Divider } from '@material-ui/core';
 import CloseIcon from '@material-ui/icons/Close';
 import useUserModal from './useUserModal';
-import { useTranslation } from 'react-i18next';
 import { PinDrop, Person, Favorite } from '@material-ui/icons';
 import SearchIcon from './SearchIcon';
 import Marks from '../Marks/Marks';
 
 function UserModal({ fullScreen }) {
-  const { t } = useTranslation();
   const userModal = useUserModal();
   const user = {
     name: 'Zhangeldy',
@@ -30,13 +28,13 @@ function UserModal({ fullScreen }) {
     sex_role: 'Пассив',
     family_status: 'Состою в браке',
     marks: ['Хочу сейчас', 'С местом', 'На машине'],
-    purpose: ['Переписка', 'Дружба', 'Отношение', 'Секс']
+    purpose: ['Переписка', 'Дружба', 'Отношение', 'Секс'],
   };
   const params = [
     user.ethnicity,
     `${user.growth}см`,
     `${user.weight}кг`,
-    `${user.penis}см`
+    `${user.penis}см`,
   ];
 
   return (
@@ -59,7 +57,10 @@ function UserModal({ fullScreen }) {
             src={user.avatar}
             alt={user.name}
           />
-          <div className="" style={{ maxWidth: 270, width: '100%', marginLeft: fullScreen ? 0 : 30 }}>
+          <div
+            className=""
+            style={{ maxWidth: 270, width: '100%', marginLeft: fullScreen ? 0 : 30 }}
+          >
             <div className="">
               <span className="fs-large mr1">{user.name}</span>
               <span className="imperceptible">

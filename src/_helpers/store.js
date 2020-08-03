@@ -1,8 +1,5 @@
-import { configureStore } from 'redux-starter-kit';
+import { configureStore } from '@reduxjs/toolkit';
 import { combineReducers } from 'redux';
 import reducers from './reducers';
 
-export const store = configureStore({
-  reducer: combineReducers(reducers),
-  devTools: process.env.NODE_ENV !== 'production'
-});
+export const store = configureStore({ reducer: combineReducers(reducers) });

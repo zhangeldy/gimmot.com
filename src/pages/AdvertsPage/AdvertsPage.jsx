@@ -10,6 +10,7 @@ import Tooltip from '@material-ui/core/Tooltip';
 import { useTranslation } from 'react-i18next';
 import useUserModal from '../../components/UserModal/useUserModal';
 import Marks from '../../components/Marks/Marks';
+import './AdvertTranslate';
 
 const advertsData = [
   {
@@ -19,7 +20,7 @@ const advertsData = [
     marks: ['Хочу сейчас', 'С местом', 'На машине'],
     comments: ['Хочу сейчас', 'С местом', 'На машине'],
     text:
-      'text text text text text text text text text text text text text text\ntext text text text text text text text text text text text text text'
+      'text text text text text text text text text text text text text text\ntext text text text text text text text text text text text text text',
   },
   {
     userName: 'Жангельды, 29',
@@ -28,7 +29,7 @@ const advertsData = [
     marks: ['Хочу сейчас', 'С местом', 'На машине'],
     comments: ['Хочу сейчас', 'С местом', 'На машине'],
     text:
-      'text text text text text text text text text text text text text text\ntext text text text text text text text text text text text text text'
+      'text text text text text text text text text text text text text text\ntext text text text text text text text text text text text text text',
   },
   {
     userName: 'Жангельды, 29',
@@ -37,7 +38,7 @@ const advertsData = [
     marks: ['Хочу сейчас', 'С местом', 'На машине'],
     comments: ['Хочу сейчас', 'С местом', 'На машине'],
     text:
-      'text text text text text text text text text text text text text text\ntext text text text text text text text text text text text text text'
+      'text text text text text text text text text text text text text text\ntext text text text text text text text text text text text text text',
   },
   {
     userName: 'Жангельды, 29',
@@ -46,8 +47,8 @@ const advertsData = [
     marks: ['Хочу сейчас', 'С местом', 'На машине'],
     comments: ['Хочу сейчас', 'С местом', 'На машине'],
     text:
-      'text text text text text text text text text text text text text text\ntext text text text text text text text text text text text text text'
-  }
+      'text text text text text text text text text text text text text text\ntext text text text text text text text text text text text text text',
+  },
 ];
 
 export default function AdvertsPage() {

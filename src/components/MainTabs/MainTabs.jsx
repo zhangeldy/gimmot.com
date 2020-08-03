@@ -5,15 +5,15 @@ import AdvertIcon from '@material-ui/icons/ViewDay';
 import MessageIcon from '@material-ui/icons/Forum';
 import PeopleIcon from '@material-ui/icons/PersonPin';
 import { Wrapper } from './MainTabsStyle';
-import { history } from '../../_helpers/history';
 import { withRouter } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import paths from '../../_helpers/paths';
-import { useSelector } from "react-redux";
-import { loginModule } from "../../pages/LoginPage/LoginDucks";
+import { useSelector } from 'react-redux';
+import { loginModule } from '../../pages/LoginPage/LoginDucks';
 
 function MainTabs({ match }) {
-  const user = useSelector(state => state[loginModule].user);
+  const history = useHistory();
+  const user = useSelector((state) => state[loginModule].user);
   return (
     <Wrapper>
       <Tabs

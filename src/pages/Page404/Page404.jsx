@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import paths from '../../_helpers/paths';
 import Button from '@material-ui/core/Button';
 import { useTranslation } from 'react-i18next';
+import './Page404Translate';
 
 export default function Page404() {
   const { t } = useTranslation();
